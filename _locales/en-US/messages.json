@@ -1,0 +1,67 @@
+{
+  "extensionName": {
+    "message": "Display Mail User Agent T",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Displays the mail program with which the selected mail was written",
+    "description": "Description of the add-on."
+  },
+  "feedback.title": {
+    "message": "Feedback",
+    "description": "feedback title"
+  },
+  "feedback.button.send": {
+    "message":  "Send Feedback",
+    "description": "title of feedback send button"
+  },
+  "feedback.button.close": {
+    "message":  "Close",
+    "description": "title of feedback close button"
+  },
+  "icon.position.label": {
+    "message": "Place icon to left",
+    "description": "icon position to left"
+  },
+  "dispMUA.NoUserAgent": {
+    "message": "No user agent string in mail",
+    "description": "no MUA"
+  },
+  "dispMUA.supported": {
+    "message": "This user agent is already supported !",
+    "description": "MUA supported"
+  },
+  "dispMUA.NOTsupported": {
+    "message": "This user agent is NOT supported !",
+    "description": "MUA not supported"
+  },
+  "feedback.mailinfo1": {
+    "message": "Please send me a message, if support for a user",
+    "description": "feedback mail info 1"
+  },
+  "feedback.mailinfo2": {
+    "message": "agent is missing or you don't like the icon.",
+    "description": "feedback mail info 2"
+  },
+  "feedback.iconinfo": {
+    "message": "(PNG, 48x48, transparent background, good quality)",
+    "description": "feedback icon info"
+  },
+  "feedback.subject": {
+    "message": "dispMUA: Feedback",
+    "description": "feedback mail subject"
+  },
+  "feedback.body.MUA": {
+    "message": "User agent string:",
+    "description": "feedback mail body MUA"
+  },
+  "feedback.body.icon": {
+    "message": "Do you have a new icon image for me?",
+    "description": "feedback mail body icon"
+  },
+  "feedback.body.url": {
+    "message": "Do you know the website of that user agent?",
+    "description": "feedback mail body URL"
+  }
+}
