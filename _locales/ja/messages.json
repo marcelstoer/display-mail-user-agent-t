@@ -20,10 +20,6 @@
     "message":  "閉じる",
     "description": "title of feedback close button"
   },
-  "icon.position.label": {
-    "message": "アイコンを左に配置する",
-    "description": "icon position to left"
-  },
   "dispMUA.NoUserAgent": {
     "message": "メールの中にユーザーエージェント文字列がありません",
     "description": "no MUA"
@@ -63,5 +59,21 @@
   "feedback.body.url": {
     "message": "Do you know the website of that user agent?",
     "description": "feedback mail body URL"
+  },
+  "options.icon.notify": {
+    "message": "アイコン表示は推奨されないWebExtension Experimentsを利用しているため、早々に利用できなくなる可能性があります。",
+    "description": "The icon display uses WebExtension Experiments, which is not recommended, and may be unavailable sooner rather than later."
+  },
+  "options.icon.show": {
+    "message": "アイコンを画像で表示する",
+    "description": "display the icon as an image"
+  },
+  "options.icon.position": {
+    "message": "アイコンを左に配置する",
+    "description": "icon position to left"
+  },
+  "options.button.apply": {
+    "message": "適用",
+    "description": "apply button"
   }
 }

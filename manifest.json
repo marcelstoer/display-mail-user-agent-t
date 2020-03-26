@@ -9,14 +9,28 @@
   "applications": {
     "gecko": {
       "id": "DisplayMailUserAgent-T-me@Toshi_",
-      "strict_min_version": "68.3"
+      "strict_min_version": "74.0b1"
+    }
+  },  
+  "experiment_apis": {
+    "dispmuaApi": {
+      "schema": "schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["dispmuaApi"]],
+        "script": "scripts/implementation.js"
+      }
     }
   },
   "permissions": [
-    "messagesRead"
+    "messagesRead", "storage"
   ],
   "background": {
     "scripts": ["scripts/dispmua.js", "scripts/dispmua-common.js"]
+  },
+  "options_ui" : {
+    "page": "content/options.html",
+    "browser_style": true
   },
   "content_scripts": [
     {
@@ -30,7 +44,6 @@
     "content/48x48/*.png"
   ],
   "message_display_action": {
-    "default_title": "dispMUA"
   },
   "icons": {
     "32": "images/logo.png",

@@ -66,8 +66,20 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     //browser.tabs.executeScript(tabId, {code: code}).then(successCB, failureCB);
     browser.tabs.executeScript(tabId, {code: code}).then((result) => {
       console.log("executeScript success: " + result);}).catch((e) => {
-        console.log("executeScript failure: " + error);
+        console.log("executeScript failure: " + e.error);
       });
+    
+    browser.storage.local.get().then((s) => {
+      const id = "dispMUAicon";
+      if (s.showIcon) {
+        browser.messageDisplayAction.setTitle({title: " "});
+        let target = s.iconPosition ? "expandedHeaders2" : "otherActionsBox";
+        //browser.dispmuaApi.remove(id);
+        browser.dispmuaApi.insertBefore(browser.extension.getURL(""), dispMUA.Info["PATH"]+dispMUA.Info["ICON"], dispMUA.Info["STRING"], id, target);
+        browser.dispmuaApi.move(id, target);
+      }
+      else browser.dispmuaApi.remove(id);
+    });
     //browser.tabs.sendMessageが実装されていない。browser.runtime.sendMessageはbackground側からは利用出来ない？(エラー)
     //そもそもThunderbirdでcontent_scriptがまともに機能しているのかがわからない。browserオブジェクトがあるように見えない
     //browser.tabs.sendMessage(
@@ -138,3 +150,40 @@ var joinObj = function(obj, fDelimiter, sDelimiter) {
   });
   return tmpArr.join(sDelimiter);
 };
+
+
+function disconnected(p) {
+  browser.dispmuaApi.remove("dispMUAicon");
+}
+// onDisconnect not implemented...
+browser.runtime.onDisconnect.addListener(disconnected);
+
+
+// Select the node that will be observed for mutations
+const targetNode = document.getElementById("displaymailuseragent-t-me_toshi_-messageDisplayAction-toolbarbutton");
+
+// Options for the observer (which mutations to observe)
+const config = { attributes: true, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+const callback = function(mutationsList, observer) {
+    // Use traditional 'for loops' for IE 11
+    for(let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            console.log('A child node has been added or removed.');
+            browser.dispmuaApi.remove("dispMUAicon");
+        }
+        else if (mutation.type === 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+    }
+};
+
+// Create an observer instance linked to the callback function
+const observer = new MutationObserver(callback);
+
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
+// Later, you can stop observing
+//observer.disconnect();

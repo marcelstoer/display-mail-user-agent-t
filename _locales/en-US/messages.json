@@ -3,7 +3,6 @@
     "message": "Display Mail User Agent T",
     "description": "Name of the extension."
   },
-
   "extensionDescription": {
     "message": "Displays the mail program with which the selected mail was written",
     "description": "Description of the add-on."
@@ -19,10 +18,6 @@
   "feedback.button.close": {
     "message":  "Close",
     "description": "title of feedback close button"
-  },
-  "icon.position.label": {
-    "message": "Place icon to left",
-    "description": "icon position to left"
   },
   "dispMUA.NoUserAgent": {
     "message": "No user agent string in mail",
@@ -63,5 +58,21 @@
   "feedback.body.url": {
     "message": "Do you know the website of that user agent?",
     "description": "feedback mail body URL"
+  },
+  "options.icon.notify": {
+    "message": "The icon display uses WebExtension Experiments, which is not recommended, and may be unavailable sooner rather than later.",
+    "description": "icon display notity"
+  },
+  "options.icon.show": {
+    "message": "Display the icon as an image.",
+    "description": "Show icon image"
+  },
+  "options.icon.position": {
+    "message": "Place the icon to the left.",
+    "description": "Icon Location"
+  },
+  "options.button.apply": {
+    "message": "Apply",
+    "description": "apply button"
   }
 }
