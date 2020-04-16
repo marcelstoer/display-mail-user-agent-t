@@ -93,9 +93,8 @@ function doSend() {
     browser.i18n.getMessage("feedback.iconinfo") + "\n\n\n\n\n" +
     "------------------------------\n" + info.headers;
   // beginNewで差出人を指定する方法がない。アカウントが複数ある場合に表示されてるメールのアカウント外のものが使われてしまう
-  // beginForwardでの転送でも正しいアカウントは設定されない。バグか
-  browser.compose.beginNew( { to: email, subject: subject, body: body } );
-  //browser.compose.beginForward(info.mid, "forwardInline",  { to: email, subject: subject, body: body } );
+  // 77a(76b)でようやく追加された。遅いっての
+  browser.compose.beginNew( { to: email, subject: subject, body: body, identityId: info.iid } );
 }
 
 function doClose(time) {

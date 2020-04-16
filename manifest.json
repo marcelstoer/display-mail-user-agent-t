@@ -23,7 +23,7 @@
     }
   },
   "permissions": [
-    "messagesRead", "storage"
+    "messagesRead", "storage", "accountsRead"
   ],
   "background": {
     "scripts": ["scripts/dispmua.js", "scripts/dispmua-common.js"]

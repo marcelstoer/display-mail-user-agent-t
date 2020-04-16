@@ -16,6 +16,11 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     dispMUA.loaded = true;
   }
 
+  let accountId = message.folder.accountId;
+  browser.accounts.get(accountId).then((MailAccount) => {
+    dispMUA.identityId = MailAccount.identities[0].id;
+  });
+
   browser.messages.getFull(message.id).then((messagePart) => {
     browser.messageDisplayAction.setPopup({popup: ''});
     dispMUA.headers = messagePart.headers;
@@ -64,7 +69,7 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
       //'parentDiv.insertBefore(icon, targetDiv);'
       'document.getElementById("expandedHeadersBottomBox").insertBefore(icon, document.getElementById("otherActionsBox"));'
     //browser.tabs.executeScript(tabId, {code: code}).then(successCB, failureCB);
-    browser.tabs.executeScript(tabId, {code: code}).then((result) => {
+    browser.tabs.executeScript(tabId.id, {code: code}).then((result) => {
       console.log("executeScript success: " + result);}).catch((e) => {
         console.log("executeScript failure: " + e.error);
       });
@@ -121,6 +126,7 @@ function connected(p) {
           "cmd": m.command,
           "mid": dispMUA.Info["messageId"],
           "eid": browser.extension.getURL(""),
+          "iid": dispMUA.identityId,
           "path": dispMUA.Info["PATH"],
           "icon": dispMUA.Info["ICON"],
           "url": dispMUA.Info["URL"],

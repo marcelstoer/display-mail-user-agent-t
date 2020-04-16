@@ -4,6 +4,7 @@ var dispMUA =
   Info: {},
   //arDispMUAOverlay: new Array(),
   arDispMUAAllocation: {},
+  identityId: null
 }
 
 dispMUA.getHeader = (key) =>
