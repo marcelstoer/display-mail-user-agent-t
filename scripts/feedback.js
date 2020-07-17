@@ -1,28 +1,3 @@
-/*browser.tabs.query({
-  active: true,
-  currentWindow: true,
-}).then(tabs => {
-  let tabId = tabs[0].id;
-  browser.messageDisplay.getDisplayedMessage(tabId).then((message) => {
-    //document.body.textContent = message.subject;
-    //document.body.textContent = browser.messages.getFull(message.id).headers["X-Mailer"];
-    browser.messages.getFull(message.id).then((messagePart) => {
-      //let content = "";
-      //for (let key in messagePart.headers)
-      //{
-      //  content += key + ": " + messagePart.headers[key] + "\r\n";
-      //}
-      //document.body.textContent = content;
-      browser.storage.local.get().then((s) => {
-        console.log(s.str);
-        console.log("setContent from storage");
-        setContent(s);
-        //browser.tabs.executeScript({file: "scripts/content.js"})
-      });
-    });
-  });
-});*/
-
 var port = browser.runtime.connect({name:"dispMUA-T"});
 port.postMessage({command: "request MUA info"});
 
@@ -92,8 +67,6 @@ function doSend() {
     browser.i18n.getMessage("feedback.body.icon") + "\n" +
     browser.i18n.getMessage("feedback.iconinfo") + "\n\n\n\n\n" +
     "------------------------------\n" + info.headers;
-  // beginNewで差出人を指定する方法がない。アカウントが複数ある場合に表示されてるメールのアカウント外のものが使われてしまう
-  // 77a(76b)でようやく追加された。遅いっての
   browser.compose.beginNew( { to: email, subject: subject, body: body, identityId: info.iid } );
 }
 

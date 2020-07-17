@@ -41,7 +41,7 @@ var dispmuaApi = class extends ExtensionCommon.ExtensionAPI {
                     dispMUA.setAttribute("tooltiptext", iconText);
                     dispMUA.setAttribute("style", "flex-shrink: 0; padding: 0; margin:" + marginTop + "px 2px 0 2px");
                     dispMUA.addEventListener("click", () => {
-                        win.document.getElementById("displaymailuseragent-t-me_toshi_-messageDisplayAction-toolbarbutton").click();
+                        win.document.getElementById("displaymailuseragent-t_toshi_-messageDisplayAction-toolbarbutton").click();
                     }, false);
                     win.document.getElementById(ehb).insertBefore(dispMUA, elm);
                     for (let elm of dispMUA.children) {

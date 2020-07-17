@@ -32,6 +32,10 @@ dispMUA.searchIcon = (strUserAgent) =>
 
     if (!strUserAgent)
     {
+      strUserAgent = dispMUA.getHeader("x-mail-agent");
+    }
+    if (!strUserAgent)
+    {
       strUserAgent = dispMUA.getHeader("x-newsreader");
     }
   }
@@ -72,6 +76,11 @@ dispMUA.searchIcon = (strUserAgent) =>
   {
     strExtra = "oweb";
   }
+  else if (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() == "internet" &&
+           dispMUA.getHeader("x-originatororg").toLowerCase() == "email.teams.microsoft.com")
+  {
+    strExtra = "msteams";
+  }
   else if (dispMUA.getHeader("x-correlation-id"))
   {
     if (dispMUA.getHeader("x-correlation-id") == dispMUA.getHeader("message-id"))
@@ -89,6 +98,10 @@ dispMUA.searchIcon = (strUserAgent) =>
   else if (dispMUA.getHeader("sender") == dispMUA.getHeader("from"))
   {
     if (dispMUA.getHeader("sender").endsWith("ebay.com>")) strExtra = "ebay" ;
+  }
+  else if (dispMUA.getHeader("x-pardot-route") && dispMUA.getHeader("x-pardot-lb"))
+  {
+    strExtra = "pardot" ;
   }
 
   strUserAgent = strUserAgent.replace(/(^\s+)|(\s+$)/g, "");
@@ -234,6 +247,13 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.Info["URL"] = "https://outlook.com";
       dispMUA.Info["FOUND"] = true;
     }
+    else if (strExtra == "msteams")
+    {
+      dispMUA.Info["ICON"] = "microsoftteams.png";
+      dispMUA.Info["STRING"] = "Microsoft Teams";
+      dispMUA.Info["URL"] = "https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software";
+      dispMUA.Info["FOUND"] = true;
+    }
     else if (strExtra == "fairemail")
     {
       dispMUA.Info["ICON"] = "fairemail.png";
@@ -246,6 +266,13 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.Info["ICON"] = "ebay2012.png";
       dispMUA.Info["STRING"] = "eBay";
       dispMUA.Info["URL"] = "https://www.ebay.com/";
+      dispMUA.Info["FOUND"] = true;
+    }
+    else if (strExtra == "pardot")
+    {
+      dispMUA.Info["ICON"] = "pardot.png";
+      dispMUA.Info["STRING"] = "Pardot";
+      dispMUA.Info["URL"] = "https://www.pardot.com/";
       dispMUA.Info["FOUND"] = true;
     }
   }
