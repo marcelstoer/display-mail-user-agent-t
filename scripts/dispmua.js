@@ -104,4 +104,4 @@ function disconnected(p) {
   browser.dispmuaApi.remove("dispMUAicon");
 }
 // onDisconnect not implemented...
-browser.runtime.onDisconnect.addListener(disconnected);
+//browser.runtime.onDisconnect.addListener(disconnected);

@@ -6,6 +6,7 @@ const win = Services.wm.getMostRecentWindow("mail:3pane");
 
 var dispmuaApi = class extends ExtensionCommon.ExtensionAPI {
     getAPI(context) {
+      context.callOnClose(this);
       return {
         dispmuaApi: {
             async insertBefore(basePath, iconPath, iconText, id, target) {
@@ -64,5 +65,9 @@ var dispmuaApi = class extends ExtensionCommon.ExtensionAPI {
             }
         }
       }
+    }
+    close() {
+        let id = "dispMUAicon";
+        if (win.document.getElementById(id)) win.document.getElementById(id).remove();
     }
 };
