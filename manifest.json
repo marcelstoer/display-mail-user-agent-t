@@ -23,14 +23,14 @@
     }
   },
   "permissions": [
-    "messagesRead", "storage", "accountsRead"
+    "messagesRead", "storage", "accountsRead", "downloads"
   ],
   "background": {
     "scripts": ["scripts/dispmua.js", "scripts/dispmua-common.js"]
   },
   "options_ui" : {
     "page": "content/options.html",
-    "browser_style": true
+    "open_in_tab": true
   },
   "web_accessible_resources": [
     "images/*.png",
