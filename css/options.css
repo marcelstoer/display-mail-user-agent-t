@@ -19,3 +19,8 @@ input[type="checkbox"]:disabled + .lbl {
     font-size: 0.8rem;
     height: auto;
 }
+
+.fileLbl:hover {
+    background-color: #e5f1fb;
+    border-color: #0078d7;
+}
