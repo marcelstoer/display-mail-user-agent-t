@@ -84,7 +84,7 @@
     "description": "export button"
   },
   "options.button.applyOl": {
-    "message": "sparen",
+    "message": "Speichern",
     "description": "apply overlay button"
   }
 }
