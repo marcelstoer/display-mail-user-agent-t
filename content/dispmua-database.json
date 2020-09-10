@@ -418,6 +418,7 @@
 	  "custommailer" : ["custommailer.png", "http://www.wildcrest.com/"],
 	  "copland mail" : ["copland_udel_edu.png", "http://copland.udel.edu/"],
 	  "contactology" : ["contactology.png", "http://www.contactology.com/"],
+	  "com.sim.mail" : ["simply.png", "https://www.seiko-sol.co.jp/products/simply-b/"],
 	  "coldfusion 8" : ["coldfusion8.png", "http://www.adobe.com/products/coldfusion/"],
 	  "coelnconcept" : ["coelnconcept_de.png", "http://www.coelnconcept.de/"],
 	  "code igniter" : ["code-igniter.png", "http://codeigniter.com/"],
@@ -442,6 +443,7 @@
 	  "crosspoint" : ["crosspoint.png", "http://www.crosspoint.de/"],
 	  "createsend" : ["createsend.png", "http://www.createsend.com/"],
 	  "cphpezmail" : ["phpclasses.png", "http://www.phpclasses.org/cphpezmail"],
+	  
 	  "cosmoshop/" : ["cosmoshop.png", "http://www.cosmoshop.de/"],
 	  "contactlab" : ["contactlab.png", "http://www.contactlab.it/"],
 	  "comventure" : ["comventure.png", "http://www.comventure.de/"],
@@ -560,6 +562,7 @@
 	  "datenbankmailer" : ["datenbankmailer.png", "http://www.datenbankmailer.de/"],
 	  "dvise by tobit" : ["tobit_david.png", "http://www.tobit.com/"],
 	  "dotnetopenmail" : ["dotnetopenmail.png", "http://dotnetopenmail.sourceforge.net/"],
+	  "dm.indalabs.hu" : ["dm_indalabs_hu.png", "https://port.hu/"],
 	  "die strommixer" : ["die-strommixer.png", "http://www.die-strommixer.de/"],
 	  "david by tobit" : ["tobit_david.png", "http://www.tobit.com/"],
 	  "danger service" : ["danger.png"],
