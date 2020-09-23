@@ -194,6 +194,7 @@
 	  "axon hosting" : ["axonhosting.png", "https://www.axonhosting.com.au/"],
 	  "atlas mailer" : ["atlas.png", "http://www.data-trak.com/atlas_mailer.php"],
 	  "aspa webmail" : ["aspa_cz.png", "http://www.aspa.cz/"],
+	  "apache ofbiz" : ["apacheofbiz.png", "https://ofbiz.apache.org/"],
 	  "ampartner.pl" : ["ampartner_pl.png", "http://www.ampartner.pl/"],
 	  "agendus mail" : ["agendus.png", "http://www.iambic.com/"],
 	  "afs-kaufmann" : ["afs-software.png", "http://www.afs-software.de/"],
@@ -967,7 +968,8 @@
 	  "hot.ee" : ["elion_hot.png", "http://portal.hot.ee/"],
 	  "h+bedv" : ["avira.png", "http://www.free-av.de/"],
 	  "hafas" : ["hafas.png", "http://www.hafas.de/hafas/ref.shtml"],
-	  "horde" : ["horde.png", "http://www.horde.org/horde/"]
+	  "horde" : ["horde.png", "http://www.horde.org/horde/"],
+	  "hood" : ["hood.png", "https://www.hood.de/"]
 	} ,
 "i":
 	{
