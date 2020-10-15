@@ -519,6 +519,7 @@
 	  "camas" : ["caudium.png", "http://www.caudium.net/"],
 	  "cacti" : ["cacti.png", "http://www.cacti.net/"],
 	  "cerb" : ["cerb.png", "https://cerb.ai/"],
+	  "cdek" : ["cdek.png", "https://www.cdek.ru/"],
 	  "caff" : ["caff.png", "http://pgp-tools.alioth.debian.org/"],
 	  "com " : ["wincom.png", ""],
 	  "cms " : ["hypernews.png", "http://hypernews.slac.stanford.edu/"],
