@@ -897,6 +897,7 @@
 	  "gatelist" : ["gatelist.png", "http://www.gatelist.com/"],
 	  "gravity" : ["microplanet.png", "http://mpgravity.sourceforge.net/"],
 	  "golded+" : ["golded-plus.png", "http://golded-plus.sourceforge.net/"],
+	  "gophish" : ["gophish.png", "https://getgophish.com/"],
 	  "gnumail" : ["gnumail.png", "http://www.collaboration-world.com/gnumail"],
 	  "gnspool" : ["gnspool.png", "http://www.freshports.org/japanese/gn-gnspool/"],
 	  "gmx.com" : ["gmx.png", "http://www.gmx.com/"],
