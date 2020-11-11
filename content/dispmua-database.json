@@ -871,6 +871,7 @@
 	  "groupwise 18" : ["groupwise18.png", "https://www.microfocus.com/products/groupwise/"],
 	  "group-office" : ["group_office.png", "http://www.group-office.com/"],
 	  "goodemail.cn" : ["goodemail_cn.png", "http://www.goodemail.cn/"],
+	  "golang email" : ["golange.png", "https://gopkg.in/gomail.v2"],
 	  "gs-shopmail" : ["gs.png", "https://www.gs-shopbuilder.de/"],
 	  "groupwise 8" : ["groupwise8.png", "http://www.novell.com/products/groupwise/"],
 	  "groundspeak" : ["groundspeak.png", "http://www.groundspeak.com/"],
@@ -2108,6 +2109,7 @@
 	} ,
 "u":
 	{
+	  "unifaun edicenter automailer" : ["unifaun.png", "https://www.unifaun.com/"],
 	  "ultimate-auction.de" : ["ultimate-auction_de.png", "http://www.ultimate-auction.de/"],
 	  "ubuntu thunderbird" : ["thunderbird.png", "http://www.ubuntu.com/"],
 	  "userland frontier" : ["userland_frontier.png"],
