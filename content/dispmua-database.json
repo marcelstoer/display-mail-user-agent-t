@@ -670,6 +670,7 @@
 	  "exclamationsoft" : ["exclamationsoft.png", "http://www.exclamationsoft.com/exclamationsoft/netmailbot/"],
 	  "emailkampane.cz" : ["emailkampane.png", "https://www.emailkampane.cz/"],
 	  "eharmony mailer" : ["eharmony.png", "http://www.eharmony.com/"],
+	  "easybill mailer" : ["easybill.png", "https://www.easybill.de/"],
 	  "ezine director" : ["ezinedirector.png", "http://www.ezinedirector.com/"],
 	  "event software" : ["event-software.png", "http://www.event-software.com/"],
 	  "emailstrategie" : ["emailstrategie.png", "http://emailstrategie.com/"],
@@ -1193,6 +1194,7 @@
 	  "lotontechemail" : ["java2.png", "https://www.javaworld.com/article/2075785/javamail-quick-start.html"],
 	  "loopia webmail" : ["loopia.png", "https://webbmail.loopia.se/"],
 	  "leaf phpmailer" : ["leafphpmailer.png", "http://leafmailer.pw/"],
+	  "lascana.at emm" :["lascana.png", "https://www.lascana.at/"],
 	  "loadmail smtp" : ["loadmail.png", "http://www.load.com/loadmail/"],
 	  "livezilla.net" : ["livezilla.png", "https://www.livezilla.net/"],
 	  "lcg profimail" : ["lcg-profimail.png", "http://www.lonelycatgames.com/?app=profimail"],
@@ -1230,6 +1232,7 @@
 	} ,
 "m":
 	{
+	  "mail.backend.jedi.jws.acl:role.jedi.acl.token.atz.jws.hermes.yahoo" : ["yahoomail.png", "https://mail.yahoo.com/"],
 	  "mailer by oracle utl_smtp - used by psu foundation" : ["psufmailer.png", "http://www.foundation.pdx.edu/"],
 	  "multi box - interfejs www poczty orange.pl" : ["orange.png", "http://www.orange.pl/", "orange.pl"],
 	  "messagerie internet de microsoft/mapi" : ["ms_patch.png", "http://www.microsoft.com/"],
@@ -1576,6 +1579,7 @@
 	  "ocxqmail from flicks software" : ["flicks_software.png", "http://www.flicks.com/ocxQmail/"],
 	  "outlook for ios and android" : ["o365outlook.png", "https://w2.outlook.com/l/mobile"],
 	  "octeth email manager pro" : ["oempro.png", "http://www.octeth.com/"],
+	  "openscape webclient" : ["openscapewc.png", "http://networks.unify.com/openscape-documentation/V9/SWC/en-us/index.htm"],
 	  "openwave webengine" : ["openwave.png", "http://www.openwave.com/"],
 	  "onlineumfragen.com" : ["onlineumfragen.png", "https://www.onlineumfragen.com/"],
 	  "online.net webmail" : ["roundcube.png", "http://www.roundcube.net/"],
