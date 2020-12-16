@@ -1867,6 +1867,7 @@
 	  "smtp support for mailgate" : ["mailgate13.png", "http://www.mailgate.com/products/msummary.php"],
 	  "smtp client for ibm i5/os" : ["i5-os.png", "http://www.ibm.com/"],
 	  "smtp client for ibm as400" : ["ibm.png", "http://www.ibm.com/"],
+	  "smtp client for ibm os400" : ["ibm.png", "https://web.archive.org/web/20050223012154/http://www-1.ibm.com/servers/eserver/iseries/software/v5r2.html"],
 	  "synchronous nic registry" : ["synchronousnicreg.png", "https://www.nic.it/"],
 	  "symon registration robot" : ["symon.png", "http://www.symon.ru/"],
 	  "spiegel verlag webmailer" : ["spiegel_online.png", "http://www.spiegel.de/"],
