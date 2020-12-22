@@ -1675,6 +1675,7 @@
 	  "phpmail (c) funmail2u" : ["funmail2u.png", "http://www.funmail2u.de/"],
 	  "prtg network monitor" : ["prtg.png", "https://www.paessler.com/prtg"],
 	  "produced by mailworx" : ["mailworx.png", "http://www.mailworx.info/"],
+	  "plott support system" : ["plott.png", "https://support.plott.co.jp/"],
 	  "produced by myvideo" : ["myvideo.png", "http://www.myvideo.de/"],
 	  "powered by flowfact" : ["flowfact.png", "http://www.flowfact.de/"],
 	  "postcrossing mailer" : ["postcrossing.png", "https://www.postcrossing.com/"],
@@ -2044,6 +2045,7 @@
 	  "sup/" : ["ruby.png", "http://sup.rubyforge.org/"],
 	  "sap " : ["sap.png", "http://www.sap.com/"],
 	  "smf" : ["simplemachines.png", "http://www.simplemachines.org/"],
+	  "sme" : ["sme.png", "http://www.koozali.org/home/downloads"],
 	  "sk " : ["typo3.png", "http://www.sk-typo3.de/"]
 	} ,
 "t":
