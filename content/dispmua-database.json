@@ -184,7 +184,7 @@
 	  "agonet webmail" : ["agonet.png", "http://www.agonet.it/"],
 	  "acro media inc" : ["acromedia.png", "http://www.acromediainc.com/"],
 	  "aconon.de mail" : ["aconon.png", "http://www.aconon.de/"],
-	  "aurora mailer" : ["noicon.png"],
+	  "aurora mailer" : ["auroramailer.png", "https://www.codester.com/items/21102/aurora-email-net"],
 	  "atlantisworld" : ["atlantisworld.png", "http://www.atlantisworld.it/"],
 	  "aster webmail" : ["aster.png", "http://www.aster.pl/"],
 	  "aspheria mail" : ["aspheria.png", "http://www.aspheria.com/"],
@@ -453,8 +453,8 @@
 	  "crosspoint" : ["crosspoint.png", "http://www.crosspoint.de/"],
 	  "createsend" : ["createsend.png", "http://www.createsend.com/"],
 	  "cphpezmail" : ["phpclasses.png", "http://www.phpclasses.org/cphpezmail"],
-	  
 	  "cosmoshop/" : ["cosmoshop.png", "http://www.cosmoshop.de/"],
+	  "coolspools" : ["coolspools.png", "https://coolspools.com/"],
 	  "contactlab" : ["contactlab.png", "http://www.contactlab.it/"],
 	  "comventure" : ["comventure.png", "http://www.comventure.de/"],
 	  "compuserve" : ["compuserve.png", "http://www.compuserve.com/"],
