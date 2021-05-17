@@ -87,5 +87,49 @@
   "options.button.applyOl": {
     "message": "保存",
     "description": "apply overlay button"
+  },
+  "options.icon.showToolbarButton": {
+    "message": "ツールバーボタンでアイコンを表示する",
+    "description": "show Toolbarbutton Icon"
+  },
+  "options.icon.messagePaneIcon": {
+    "message": "メッセージペインアイコン設定",
+    "description": "message pane icon config"
+  },
+  "options.icon.showMessagePaneIcon": {
+    "message": "メッセージペインにアイコンを表示する",
+    "description": "Display an icon in the message pane"
+  },
+  "options.icon.iconPos": {
+    "message": "メッセージペイン内でのアイコン表示の位置",
+    "description": "The position of the icon display in the message pane"
+  },
+  "options.icon.iconPosTop": {
+    "message": "上:",
+    "description": "Top"
+  },
+  "options.icon.iconPosRight": {
+    "message": "右:",
+    "description": "Right"
+  },
+  "options.icon.iconSize": {
+    "message": "アイコンサイズ:",
+    "description": "Icon size"
+  },
+  "options.icon.hideIconTime": {
+    "message": "一定時間経過後にアイコンを非表示",
+    "description": "Hide the icon after a certain period of time (n seconds)"
+  },
+  "options.icon.hideSec": {
+    "message": "(秒)",
+    "description": "(sec)"
+  },
+  "options.icon.zeroCaution": {
+    "message": "※0秒にするとアイコンは表示されたままになります",
+    "description": "*0 seconds, the icon will remain displayed"
+  },
+  "options.icon.feedbackBgcolor": {
+    "message": "フィードバックダイアログの背景色",
+    "description": "Feedback dialog background color"
   }
 }

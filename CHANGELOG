@@ -5,6 +5,65 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.5.16 2021-5-18
+- Some more icon(2150 now)
+
+2.5.15 2021-5-12
+- Some more icon(2147 now)
+
+2.5.14 2021-5-5
+- Some more icon(2146 now)
+
+2.5.13 2021-4-27
+- Some more icon(2145 now)
+- Added user-agent string
+
+2.5.12 2021-4-23
+- Added user-agent string
+- Some more icon(2144 now)
+
+2.5.11 2021-4-20
+- Added user-agent string
+
+2.5.10 2021-4-8
+- Some more icon(2143 now)
+- Added user-agent string
+
+2.5.9 2021-4-2
+- Removed the text label of the icon (because the feature was backported)
+- Added user-agent string
+
+2.5.8 2021-3-30
+- Some more icon(2142 now)
+
+2.5.7 2021-3-27
+- Some more icon(2140 now)
+
+2.5.6 2021-3-26
+- Some more icon(2139 now)
+
+2.5.5 2021-3-25
+- Some more icon(2136 now)
+
+2.5.4 2021-3-24
+- Some more icon(2135 now)
+
+2.5.3 2021-3-19
+- Some more icon(2133 now)
+- Added user-agent string
+
+2.5.2 2021-3-17
+- Some more icon(2132 now)
+
+2.5.1 2021-3-16
+- Some more icon(2131 now)
+- Added 2 user-agent strings
+- Changed one icon
+
+2.5.0 2021-3-5
+- Remove WebExtension Experiment API
+- Change Icon location
+
 2.1.47 2021-3-2
 - Some more icon(2127 now)
 

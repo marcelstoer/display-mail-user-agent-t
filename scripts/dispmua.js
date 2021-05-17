@@ -2,14 +2,73 @@ const iId = "dispMUAicon";
 
 browser.messageDisplayAction.onClicked.addListener((tabId) => {
   if (dispMUA.Info["ICON"] != "empty.png") {
-   //promiseを返すけどthenで処理すると2回に1回エラーになるので普通に
-   browser.messageDisplayAction.setPopup({popup: "content/feedback.xhtml"});
-   browser.messageDisplayAction.openPopup();
+    port.postMessage({command: "show feedback"});
   };
 });
 
+var options = {};
+function setDefault(opt) {
+  console.log("startup option values:", opt, opt.showMessagePaneIcon);
+  if (!opt.iconSize) {
+    browser.storage.local.set({
+      showToolbarButton: false,
+      showMessagePaneIcon: true,
+      iconPosTop: 8,
+      iconPosRight: 8,
+      iconSize: 48,
+      hideIconTime: 0,
+      feedbackBgcolor: "#ffe4c4",
+    /*}).then((vv) => {
+      console.log("option value showMessagePaneIcon(dispmua.js):" + vv.showMessagePaneIcon);*/
+    }).then( v => { console.log("set default values of option finished(after then)." + v);});
+    console.log("set default option values finished. " + JSON.stringify(opt));
+    options = {
+      showToolbarButton: false,
+      showMessagePaneIcon: true,
+      iconPosTop: 8,
+      iconPosRight: 8,
+      iconSize: 48,
+      hideIconTime: 0,
+      feedbackBgcolor: "#ffe4c4",
+    };
+  } else {
+    options = opt;
+  }
+}
+
+function onError(e) {
+  console.error(e);
+}
+
+let getOpt = browser.storage.local.get();
+getOpt.then(setDefault, onError);
+//browser.storage.local.get().then( v => { options = v; });
+
+// inject scripts/css
+// inject scripts does not work. Is it a Thunderbird bug?
+/*
+var regedScripts;
+browser.messageDisplayScripts.register({
+  js: [
+    //{code: `document.body.textContent = "test";`},
+    //{code: `let feedback = document.createElement("div");feedback.innerHTML = "hogehoge!"; document.body.appendChild(feedback);`},
+    //{file: "scripts/content-scripts.js"}, //It doesn't seem to work
+  ],
+  css: [
+    //{code: ".dispMUA-icon {z-index: 1; position: absolute; right: 8px; top: 8px; transition:opacity 1000ms;}"},
+    //{code: ".popup-page {position: absolute; right: 8px; top: 8px; border: 1px; border-color: #0; border-style: soiid; border-radius: 5px; padding: 5px; background-color: bisque;}"},
+    //{code: "#feedbackdiv {z-index: 2; opacity: 0; transition:opacity 500ms;}"},
+    //{code: "input.flat {border: 0; width: 100%; background-color: bisque;} .wrap {display: flex; } .icon {width: 48px; height: 48px;} .throbber {width: 16px; height:16px; margin-left:3px; } .wrapbutton {display: flex; justify-content: space-between;}"}
+    {code: ".dispMUA-icon {z-index: 1; position: absolute; right: " + options.iconPosRight + "px; top: " + options.iconPosTop + "px; transition:opacity 1000ms;}"},
+    {code: ".popup-page {position: absolute; right: 8px; top: 8px; border: 1px; border-color: #0; border-style: soiid; border-radius: 5px; padding: 5px; background-color: " + options.feedbackBgcolor + ";}"},
+    {code: "#feedbackdiv {z-index: 2; opacity: 0; transition:opacity 500ms;}"},
+    {code: "input.flat {border: 0; width: 100%; background-color: " + options.feedbackBgcolor + ";} .wrap {display: flex; } .icon {width: 48px; height: 48px;} .throbber {width: 16px; height:16px; margin-left:3px; } .wrapbutton {display: flex; justify-content: space-between;}"}
+  ]
+}).then((r) => {regedScripts = r; console.log("content-script(CSS) registered.");}).catch(e => console.log("regist error" + e.message));
+*/
 browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
   //console.log(`Message displayed in tab ${tabId}: ${message.subject}`);
+  browser.messageDisplayAction.disable(tabId.id);
   if (!dispMUA.loaded) {
     dispMUA.loadJSON("dispmua-database.json");
     dispMUA.loaded = true;
@@ -38,8 +97,15 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     dispMUA.identityId = MailAccount.identities[0].id;
   });
 
+  var executing;
+  executing = browser.tabs.executeScript(tabId.id, {
+    file: "scripts/content-script.js"
+  });
+
   browser.messages.getFull(message.id).then((messagePart) => {
     browser.messageDisplayAction.setPopup({popup: ''});
+    browser.messageDisplayAction.setLabel({label: ''});
+    //browser.messageDisplayAction.disable(tabId.id);
     dispMUA.headers = messagePart.headers;
     dispMUA.Info["messageId"] = message.id;
     //dispMUA.headerdata = this.content; // all headers strings
@@ -55,7 +121,8 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     });
     if (dispMUA.headers["x-mozilla-keys"] !== undefined) {
       //意味なし。空白文字は削除されるっぽく、ヘッダのみだと改行がされない。compose側のバグか？
-      if (dispMUA.headers["x-mozilla-keys"][0].length == 0) dispMUA.headers["x-mozilla-keys"][0] = '\r\n'; //' '.repeat(40);
+      //No meaning. Whitespace characters seem to be deleted, and line breaks are not made if only the header is used. Is it a bug on the compose side?
+      if (dispMUA.headers["x-mozilla-keys"][0].length == 0) dispMUA.headers["x-mozilla-keys"][0] = '\r\n';
     }
     dispMUA.searchIcon("");
     const len = 10;
@@ -73,45 +140,54 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     } else {
       browser.messageDisplayAction.setIcon({path: dispMUA.Info["PATH"]+dispMUA.Info["ICON"]});
     }
-    browser.messageDisplayAction.setTitle({title: str.length > len ? str.substr(0, len) + '...' : str});
+    //browser.messageDisplayAction.setTitle({title: str.length > len ? str.substr(0, len) + '...' : str});
+    browser.messageDisplayAction.setTitle({title: str});  //API is now available(Added in TB 84.0b3, backported to TB 78.6.1) so I don't have to truncate strings.
+
+    browser.tabs.insertCSS(tabId.id, {code:
+      ".dispMUA-icon {z-index: 1; position: absolute; right: " + options.iconPosRight + "px; top: " + options.iconPosTop + "px; transition:opacity 1000ms;} " +
+      ".popup-page {position: absolute; right: 8px; top: 8px; border: 1px; border-color: #0; border-style: soiid; border-radius: 5px; padding: 5px; background-color: " + options.feedbackBgcolor + ";} " +
+      "#feedbackdiv {z-index: 2; opacity: 0; transition:opacity 500ms;} " +
+      "input.flat {border: 0; width: 100%; background-color: " + options.feedbackBgcolor + ";} .wrap {display: flex; } .icon {width: 48px; height: 48px;} .throbber {width: 16px; height:16px; margin-left:3px; } .wrapbutton {display: flex; justify-content: space-between;}"}
+    );
+
     browser.storage.local.get().then((s) => {
-      if (s.showIcon) {
-        browser.messageDisplayAction.setTitle({title: " "});
-        let target = s.iconPosition ? "expandedHeaders2" : "otherActionsBox";
-        //browser.dispmuaApi.remove(id);
+      if (s.showToolbarButton) browser.messageDisplayAction.enable(tabId.id);
+      console.log("before executeScript.");
+      executing.then(() => {
+        console.log("executeScript done. tabid:" + tabId.id);
+        //*Error: can't access property "url", info is undefined. why?
+        let url = "";
         if (dispMUA.Info["PATH"] == "") { // overlay
           if (dispMUA.Info["ICON"].startsWith("file:///")) {
-            browser.messageDisplayAction.setTitle({title: "!?"});
+            //There is no way to read local file icons here
+            url = "content/48x48/empty.png";
+            //browser.messageDisplayAction.setTitle({title: "!?"});
+          } else {
+            url = dispMUA.Info["ICON"];
           }
-          browser.dispmuaApi.insertBefore("", dispMUA.Info["ICON"], dispMUA.Info["STRING"], iId, target);
         } else {
-          browser.dispmuaApi.insertBefore(browser.extension.getURL(""), dispMUA.Info["PATH"]+dispMUA.Info["ICON"], dispMUA.Info["STRING"], iId, target);
+          url = browser.extension.getURL("") + dispMUA.Info["PATH"] + dispMUA.Info["ICON"];
         }
-        browser.dispmuaApi.move(iId, target);
-      }
-      else browser.dispmuaApi.remove(iId);
+        //browser.tabs.sendMessage(tabId.id, {command: "set", iconURL: url, MUA: dispMUA.Info["STRING"]});
+        console.log("option value showMessagePaneIcon:" + s.showMessagePaneIcon);
+        if (s.showMessagePaneIcon) {
+          port.postMessage({command: "set", iconURL: url, MUA: dispMUA.Info["STRING"], iconSize: s.iconSize, hideTime: s.hideIconTime});
+        }
+      }).catch((e) => {
+        console.log("executeScript error: " + e.message);
+      }).then(() => {console.log("finaly executeScript.")});
     });
   });
-});
-
-browser.windows.onCreated.addListener((window) => {
-  if (window.type == "messageDisplay") {
-    //browser.dispmuaApi.create(iId, "otherActionsBox");
-    //browser.dispmuaApi.insertBefore(browser.extension.getURL(""), dispMUA.Info["PATH"]+dispMUA.Info["ICON"], dispMUA.Info["STRING"], iId, "otherActionsBox");
-    console.log("new messageDisplay created.")
-  }
 });
 
 var port;
 function connected(p) {
   port = p;
   port.onMessage.addListener(function(m) {
-    //console.log("In background script, received message from content script")
-    //console.log(m.greeting);
     switch (m.command) {
       case 'request MUA info':
         port.postMessage({
-          "cmd": m.command,
+          "command": "MUA info",
           "mid": dispMUA.Info["messageId"],
           "eid": browser.extension.getURL(""),
           "iid": dispMUA.identityId,
@@ -122,6 +198,12 @@ function connected(p) {
           "headers" : joinObj(dispMUA.headers, ": ", "\r\n"),
           "found" : dispMUA.Info["FOUND"]
         });
+        break;
+      case 'beginNew':
+        browser.compose.beginNew({to: m.to, subject: m.subject, body: m.body, identityId: m.identityId});
+        break;
+      case 'openURL':
+        browser.tabs.create({url: m.url});
         break;
       /*case 'request getOverlay':
         dispMUA.getOverlay();
@@ -143,10 +225,3 @@ var joinObj = function(obj, fDelimiter, sDelimiter) {
   });
   return tmpArr.join(sDelimiter);
 };
-
-/*function disconnected(p) {
-  //browser.dispmuaApi.remove("dispMUAicon");
-  browser.dispmuaApi.remove(iId);
-}*/
-// onDisconnect not implemented...
-//browser.runtime.onDisconnect.addListener(disconnected);

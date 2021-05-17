@@ -86,5 +86,49 @@
   "options.button.applyOl": {
     "message": "Запази",
     "description": "apply overlay button"
+  },
+  "options.icon.showToolbarButton": {
+    "message": "показване на иконата на бутона на лентата с инструменти",
+    "description": "show Toolbarbutton Icon"
+  },
+  "options.icon.messagePaneIcon": {
+    "message": "икона за конфигуриране на прозореца на съобщението",
+    "description": "message pane icon config"
+  },
+  "options.icon.showMessagePaneIcon": {
+    "message": "Показване на икона в прозореца на съобщението",
+    "description": "Display the icon in the message pane"
+  },
+  "options.icon.iconPos": {
+    "message": "Позицията на дисплея на иконата в прозореца за съобщения",
+    "description": "The position of the icon display in the message pane"
+  },
+  "options.icon.iconPosTop": {
+    "message": "Топ:",
+    "description": "Top:"
+  },
+  "options.icon.iconPosRight": {
+    "message": "Право:",
+    "description": "Right:"
+  },
+  "options.icon.iconSize": {
+    "message": "Размер на иконата:",
+    "description": "Icon size:"
+  },
+  "options.icon.hideIconTime": {
+    "message": "Скриване на иконата след определен период от време (n секунди)",
+    "description": "Hide the icon after a certain period of time"
+  },
+  "options.icon.hideSec": {
+    "message": "(секунди)",
+    "description": "(sec)"
+  },
+  "options.icon.zeroCaution": {
+    "message": "* 0 секунди, иконата ще остане показана",
+    "description": "*0 seconds, the icon will remain displayed"
+  },
+  "options.icon.feedbackBgcolor": {
+    "message": "Цвят на фона на диалоговия прозорец за обратна връзка",
+    "description": "Feedback dialog background color"
   }
 }

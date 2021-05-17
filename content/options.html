@@ -6,26 +6,33 @@
   </head>
   <body>
     <form>
-        <div><label id="notifyIconLbl"/></div>
-        <blockquote cite="https://developer.thunderbird.net/add-ons/tb78">Authors and maintainers of legacy add-ons (including MailExtensions with legacy support), have two routes forward:<ol>
-            <li>Convert your add-on to a MailExtension. If the API you need doesn't exist yet, tell us about it.</li>
-            <li>Convert your add-on to a Web Extension Experiment. Most add-ons should be able to be converted to an experiment with a reasonable effort.</li></ol>
-            The recommended path forward is to convert it to a MailExtension. That will make sure the add-on works without significant changes over many years. If you go with option 2, you'll have to maintain a lot more code yourself and breakages can and will be bad unless you keep up really close.</blockquote>
-            Cited from https://developer.thunderbird.net/add-ons/tb78<br/><br/>
-        <div><input type="checkbox" id="showIcon"><label id="showIconLbl" for="showIcon"/></div>
-        <div style="margin-left: 1em;"><input type="checkbox" id="iconPosition" disabled="disabled"><label id="iconPositionLbl" for="iconPosition" class="lbl"/></div>
-        <input id="applyBtn" type="button"/>
-        <hr />
-        <div><label id="overlayLbl"/></div>
-        <div>
-          <label for="importBtn" id="importBtnLbl" class="fileLbl"></label><input type="file" id="importBtn" class="fileselect">
-          <input id="exportBtn" type="button"/>
-        </div>
-        <div id="overlayExamples"></div>
-        <div>
-          <textarea id="overlayDef" class="overlayDef" rows="10"></textarea>
-        </div>
-        <input id="applyOlBtn" type="button"/>
+      <div><input type="checkbox" id="showToolbarButton"><label id="showToolbarButtonLbl" for="showToolbarButton"/></div>
+      <fieldset style="width: 500px">
+        <legend id="messagePaneIcon"></legend>
+        <div><input type="checkbox" id="showMessagePaneIcon"><label id="showMessagePaneIconLbl" for="showMessagePaneIcon"/></div>
+        <fieldset>
+          <legend id="iconPosLbl"></legend>
+          <label id="iconPosTopLbl" for="iconPosTop"></label><input type="text" size="3" id="iconPosTop">
+          <label id="iconPosRightLbl" for="iconPosRight"></label><input type="text" size="3" id="iconPosRight"><label>   default 8 8</label>
+        </fieldset>
+        <label id="iconSizeLbl" for="iconSize"></label><input type="text" size="2" id="iconSize"><label>   default 48px</label>
+        <div><label id="hideIconTimeLbl"></label><input type="text" size="1" id="hideIconTime"><label id="hideSecLbl"></label></div>
+        <div><label id="zeroCautionLbl"></label></div>
+      </fieldset>
+      <div><input type="color" id="feedbackBgcolor">  <label id="feedbackBgcolorLbl" for="feedbackBgcolor"></label></div>
+
+      <input id="applyBtn" type="button"/>
+      <hr />
+      <div><label id="overlayLbl"/></div>
+      <div>
+        <label for="importBtn" id="importBtnLbl" class="fileLbl"></label><input type="file" id="importBtn" class="fileselect">
+        <input id="exportBtn" type="button"/>
+      </div>
+      <div id="overlayExamples"></div>
+      <div>
+        <textarea id="overlayDef" class="overlayDef" rows="10"></textarea>
+      </div>
+      <input id="applyOlBtn" type="button"/>
     </form>
     <script src="/scripts/options.js"></script>
   </body>
