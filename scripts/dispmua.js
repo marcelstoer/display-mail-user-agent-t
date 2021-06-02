@@ -8,7 +8,7 @@ browser.messageDisplayAction.onClicked.addListener((tabId) => {
 
 var options = {};
 function setDefault(opt) {
-  console.log("startup option values:", opt, opt.showMessagePaneIcon);
+  //console.log("startup option values:", opt, opt.showMessagePaneIcon);
   if (!opt.iconSize) {
     browser.storage.local.set({
       showToolbarButton: false,
@@ -21,7 +21,7 @@ function setDefault(opt) {
     /*}).then((vv) => {
       console.log("option value showMessagePaneIcon(dispmua.js):" + vv.showMessagePaneIcon);*/
     }).then( v => { console.log("set default values of option finished(after then)." + v);});
-    console.log("set default option values finished. " + JSON.stringify(opt));
+    //console.log("set default option values finished. " + JSON.stringify(opt));
     options = {
       showToolbarButton: false,
       showMessagePaneIcon: true,
@@ -40,8 +40,8 @@ function onError(e) {
   console.error(e);
 }
 
-let getOpt = browser.storage.local.get();
-getOpt.then(setDefault, onError);
+//2021-6-2 let getOpt = browser.storage.local.get();
+//2021-6-2 getOpt.then(setDefault, onError);
 //browser.storage.local.get().then( v => { options = v; });
 
 // inject scripts/css
@@ -67,7 +67,9 @@ browser.messageDisplayScripts.register({
 }).then((r) => {regedScripts = r; console.log("content-script(CSS) registered.");}).catch(e => console.log("regist error" + e.message));
 */
 browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
-  //console.log(`Message displayed in tab ${tabId}: ${message.subject}`);
+  let getOpt = browser.storage.local.get();
+  getOpt.then(setDefault, onError);
+    //console.log(`Message displayed in tab ${tabId}: ${message.subject}`);
   browser.messageDisplayAction.disable(tabId.id);
   if (!dispMUA.loaded) {
     dispMUA.loadJSON("dispmua-database.json");
@@ -166,7 +168,8 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
             url = dispMUA.Info["ICON"];
           }
         } else {
-          url = browser.extension.getURL("") + dispMUA.Info["PATH"] + dispMUA.Info["ICON"];
+          //url = browser.extension.getURL("") + dispMUA.Info["PATH"] + dispMUA.Info["ICON"];
+          url = browser.runtime.getURL("") + dispMUA.Info["PATH"] + dispMUA.Info["ICON"];
         }
         //browser.tabs.sendMessage(tabId.id, {command: "set", iconURL: url, MUA: dispMUA.Info["STRING"]});
         console.log("option value showMessagePaneIcon:" + s.showMessagePaneIcon);
@@ -189,7 +192,7 @@ function connected(p) {
         port.postMessage({
           "command": "MUA info",
           "mid": dispMUA.Info["messageId"],
-          "eid": browser.extension.getURL(""),
+          "eid": browser.runtime.getURL(""),  //browser.extension.getURL(""),
           "iid": dispMUA.identityId,
           "path": dispMUA.Info["PATH"],
           "icon": dispMUA.Info["ICON"],
