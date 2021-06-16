@@ -117,7 +117,14 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     Object.keys(dispMUA.headers).forEach(function (key) {
       for (let i = 0; i < dispMUA.headers[key].length; i++) {
         if (dispMUA.headers[key][i].length > 0 && !ascii.test(dispMUA.headers[key][i])) {
-          dispMUA.headers[key][i] = mheader + btoa(unescape(encodeURIComponent(decodeURIComponent(escape(dispMUA.headers[key][i]))))) + "?=";
+          try {
+            //dispMUA.headers[key][i] = mheader + btoa(unescape(encodeURIComponent(decodeURIComponent(escape(dispMUA.headers[key][i]))))) + "?=";
+            //dispMUA.headers[key][i] = mheader + btoa(unescape(encodeURIComponent(decodeURIComponent(escape(unescape(encodeURIComponent(dispMUA.headers[key][i]))))))) + "?=";
+            dispMUA.headers[key][i] = mheader + btoa(unescape(encodeURIComponent(dispMUA.headers[key][i]))) + "?=";
+          }
+          catch(e) {
+            console.log("header decode error: " + dispMUA.headers[key][i]);
+          }
         }
       }
     });

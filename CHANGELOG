@@ -5,6 +5,10 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.5.21 2021-6-17
+- Added user-agent string
+- Fixed error with decodeURIComponent
+
 2.5.20 2021-6-8
 - Some more icon(2154 now)
 

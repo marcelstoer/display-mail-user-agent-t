@@ -1333,6 +1333,7 @@
 	  "mailer by oracle" : ["oracle.png", "http://www.oracle.com/"],
 	  "mailed by oracle" : ["oracle.png", "http://www.oracle.com/"],
 	  "mailcity service" : ["lycos-mailcity.png", "http://www.mailcity.com/"],
+	  "mailchip: mailid" : ["noicon.png", "https://pastebin.com/8VJB4aUr"],
 	  "mailchimp mailer" : ["mailchimp.png", "http://www.mailchimp.com/"],
 	  "mail/news client" : ["thunderbird.png", "http://www.mozilla.com/thunderbird/"],
 	  "mail.com webmail" : ["mail_com.png", "http://www.mail.com/"],
