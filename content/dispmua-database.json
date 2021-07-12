@@ -3,10 +3,12 @@
 	{
 	  "libreoffice 4.2 via caolan's mailmerge component" : ["libreoffice.png", "https://github.com/LibreOffice/core/blob/master/scripting/source/pyprov/mailmerge.py"],
 	  "4sellers mailmanagement system" : ["4sellers.png", "https://www.4sellers.de/software/integration/newsletter/"],
+	  "iris passpa-benachrichtigung" : ["noicon.png"],
 	  "details mailer system" : ["noicon.png"],
 	  "edv-buchversand.de" : ["edv-buchversand.de.png", "https://www.edv-buchversand.de/"],
 	  "whmcs email plus+" : ["whmcsemailplus.png", "https://www.whmcs.com/"],
 	  "deltagon sec@gw" : ["deltagon.png", "https://www.deltagon.com/"],
+	  "amazon workmail" : ["amazonworkmail.png", "https://aws.amazon.com/workmail/"],
 	  "amlc de arclab" : ["amlcdearclab.png", "https://www.arclab.com/en/amlc/"],
 	  "hosting cloud" : ["hostingcloud.png", "https://hostingcloud.com.au/"],
 	  "ccm benchmark" : ["ccmbenchmark.png", "https://www.ccmbenchmark.com/"],
@@ -1067,6 +1069,7 @@
 	  "ibismail for" : ["ibismail.png", "http://ibis.ne.jp/en/products/ibisMail_iPhone/"],
 	  "iphone mail" : ["apple_iphone.png", "http://www.apple.com/"],
 	  "incredimail" : ["incredimail.png", "http://www.incredimail.com/"],
+	  "imapservice" : ["lineageosemail.png", "https://github.com/LineageOS/android_packages_apps_Email"],
 	  "iqsmtp.net" : ["noicon.png"],
 	  "ipilum.com" : ["ipilum_com.png", "http://www.ipilum.com/"],
 	  "intersport" : ["intersport.png", "http://www.intersport.com/"],
@@ -2414,6 +2417,7 @@
 	  "yourzine.nl" : ["yourzine_nl.png", "http://www.yourzine.nl/"],
 	  "ymailnorrin" : ["yahoomail.png", "https://mail.yahoo.com/"],
 	  "yahoomailrc" : ["yahoo.png", "http://www.yahoo.com/"],
+	  "ymailnodin" : ["yahoomail.png", "https://mail.yahoo.com/"],
 	  "yandex.ru" : ["yandex_ru.png", "http://www.yandex.ru/"],
 	  "y.a.m.c.!" : ["yamc.png", "http://www.borg-kindberg.ac.at/yamc/"],
 	  "youtrack" : ["youtrack.png", "https://www.jetbrains.com/youtrack/"],
@@ -2429,6 +2433,7 @@
 "z":
 	{
 	  "zuver hosting and domains" : ["zuverhosting.png", "https://zuver.net.au/"],
+	  "znuny lts mail service" : ["znuny.png", "https://www.znuny.org/en"],
 	  "zercom online mailer" : ["zercom.png"],
 	  "zope/securemailhost" : ["zope.png", "http://www.zope.com/"],
 	  "zammad mail service" : ["zammadmailservice.png", "https://zammad.org/"],
