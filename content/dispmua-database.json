@@ -1443,6 +1443,7 @@
 	  "mediawiki" : ["mediawiki.png", "http://www.mediawiki.org/"],
 	  "mediatrix" : ["mediatrix.png", "http://www.ityx-solutions.de/"],
 	  "medi@trix" : ["mediatrix.png", "http://www.ityx-solutions.de/"],
+	  "mc2mailer" : ["noicon.png"],
 	  "matchbox/" : ["plumdigitalmedia.png", "http://matchbox.plumdigitalmedia.com/"],
 	  "mallux.de" : ["mallux_de.png", "http://www.mallux.de/"],
 	  "majordomo" : ["greatcircle.png", "http://www.greatcircle.com/majordomo/"],
@@ -2517,6 +2518,7 @@
 "message-id":
 	{
 	  "@email.teams.microsoft.com>" :["microsoftteams.png", "https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software"],
+	  "@notifications.google.com>" : ["googlenotify.png", "https://workspace.google.com/marketplace/app/email_notifications_for_google_forms/984866591130", "Google"],
 	  "@sitepoint.sparklist.com>" : ["sparklist_com.png", "http://www.sparklist.com/", "sparklist"],
 	  ".javamail.ngmail@webmail" : ["arcor.png", "http://www.arcor.de/", "ARCOR"],
 	  ".expiry@letsencrypt.org>" : ["letsencrypt.png","https://letsencrypt.org/", "Let's Encrypt"],
