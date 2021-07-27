@@ -434,7 +434,7 @@
 	  "cu newsletter" : ["cleverinternetsuite.png", "http://www.clevercomponents.com/products/inetsuite/suite.asp"],
 	  "cu mailsystem" : ["computeruniverse.png", "http://www.computeruniverse.net/"],
 	  "ctm powermail" : ["ctm_powermail.png", "http://www.ctmdev.com/"],
-	  "compost carma" : ["compost_carma.png", "http://www.compost.se/en/carma/"],
+	  "compost carma" : ["symplify.png", "https://symplify.com/communication/"],
 	  "codes-sources" : ["code-source.png"],
 	  "cobian backup" : ["cobian.png", "http://www.cobian.se/"],
 	  "chollian mail" : ["chollian.png", "http://www.chol.com/"],
@@ -492,6 +492,7 @@
 	  "cvsmailer" : ["cvsmailer.png"],
 	  "cosis.net" : ["cosisnet.png", "https://www.cosis.net/"],
 	  "consultes" : ["consultes_it.png", "http://www.consultes.it/"],
+	  "cmimemail" : ["cmimemail.png", "https://netcat.ru/"],
 	  "clie mail" : ["clie-mail.png", "http://www.sony.jp/CLIE/"],
 	  "citromail" : ["citromail.png"],
 	  "cika mail" : ["cikamail.png", "https://www.cika-software.de/kontaktmanagement-und-dokumentenverwaltung/"],
@@ -2519,7 +2520,7 @@
 "message-id":
 	{
 	  "@email.teams.microsoft.com>" :["microsoftteams.png", "https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software"],
-	  "@notifications.google.com>" : ["googlenotify.png", "https://workspace.google.com/marketplace/app/email_notifications_for_google_forms/984866591130", "Google"],
+	  "@notifications.google.com>" : ["google.png", "https://workspace.google.com/marketplace/app/email_notifications_for_google_forms/984866591130", "Google"],
 	  "@sitepoint.sparklist.com>" : ["sparklist_com.png", "http://www.sparklist.com/", "sparklist"],
 	  ".javamail.ngmail@webmail" : ["arcor.png", "http://www.arcor.de/", "ARCOR"],
 	  ".expiry@letsencrypt.org>" : ["letsencrypt.png","https://letsencrypt.org/", "Let's Encrypt"],
