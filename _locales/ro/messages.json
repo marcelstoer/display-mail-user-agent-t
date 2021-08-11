@@ -88,19 +88,19 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Show toolbarbutton icon",
+    "message": "Afișați pictograma butonului barei de instrumente",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Message pane icon config",
+    "message": "Configurare pictogramă panou mesaj",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Display the icon in the message pane",
+    "message": "Afișați pictograma în panoul de mesaje",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "The position of the icon display in the message pane",
+    "message": "Poziția pictogramei se afișează în panoul de mesaje",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
@@ -108,15 +108,15 @@
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Right:",
+    "message": "Dreapta:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Icon size:",
+    "message": "Dimensiunea pictogramei:",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Hide the icon after a certain period of time",
+    "message": "Ascundeți pictograma după o anumită perioadă de timp",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
@@ -124,11 +124,11 @@
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 seconds, the icon will remain displayed",
+    "message": "* 0 secunde, pictograma va rămâne afișată",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Feedback dialog background color",
+    "message": "Culoarea fundalului dialogului de feedback",
     "description": "Feedback dialog background color"
   }
 }
