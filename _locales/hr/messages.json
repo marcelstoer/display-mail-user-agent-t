@@ -88,47 +88,47 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Show toolbarbutton icon",
+    "message": "Prikaži ikonu gumba na alatnoj traci",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Message pane icon config",
+    "message": "Konfiguracija ikone okna za poruke",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Display the icon in the message pane",
+    "message": "Prikažite ikonu u oknu za poruke",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "The position of the icon display in the message pane",
+    "message": "Položaj ikone u oknu za poruke",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
-    "message": "Top:",
+    "message": "Vrh:",
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Right:",
+    "message": "Pravo:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Icon size:",
+    "message": "Veličina ikone:",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Hide the icon after a certain period of time",
+    "message": "Sakrijte ikonu nakon određenog vremena",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
-    "message": "(sec)",
+    "message": "(s)",
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 seconds, the icon will remain displayed",
+    "message": "*0 sekundi, ikona će ostati prikazana",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Feedback dialog background color",
+    "message": "Boja pozadine dijaloga za povratne informacije",
     "description": "Feedback dialog background color"
   }
 }
