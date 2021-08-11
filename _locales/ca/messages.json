@@ -88,47 +88,47 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Show toolbarbutton icon",
+    "message": "Mostra la icona del botó de la barra d'eines",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Message pane icon config",
+    "message": "Configuració de la icona de la subfinestra de missatges",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Display the icon in the message pane",
+    "message": "Visualitza la icona a la subfinestra de missatges",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "The position of the icon display in the message pane",
+    "message": "La posició de la icona que es mostra a la subfinestra de missatges",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
-    "message": "Top:",
+    "message": "Cim:",
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Right:",
+    "message": "Dreta:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Icon size:",
+    "message": "Mida de la icona:",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Hide the icon after a certain period of time",
+    "message": "Amaga la icona després d'un cert període de temps",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
-    "message": "(sec)",
+    "message": "(seg)",
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 seconds, the icon will remain displayed",
+    "message": "*0 segons, la icona romandrà visualitzada",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Feedback dialog background color",
+    "message": "Color de fons del diàleg de retroalimentació",
     "description": "Feedback dialog background color"
   }
 }
