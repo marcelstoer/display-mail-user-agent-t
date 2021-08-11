@@ -88,35 +88,35 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Show toolbarbutton icon",
+    "message": "Pictogram werkbalkknop tonen",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Message pane icon config",
+    "message": "Pictogram configuratie berichtvenster",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Display the icon in the message pane",
+    "message": "Geef het pictogram weer in het berichtenvenster",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "The position of the icon display in the message pane",
+    "message": "De positie van de pictogramweergave in het berichtenvenster",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
-    "message": "Top:",
+    "message": "Bovenkant:",
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Right:",
+    "message": "Rechts:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Icon size:",
+    "message": "Pictogram grootte:",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Hide the icon after a certain period of time",
+    "message": "Verberg het pictogram na een bepaalde tijd",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
@@ -124,11 +124,11 @@
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 seconds, the icon will remain displayed",
+    "message": "*0 seconden, het pictogram blijft weergegeven",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Feedback dialog background color",
+    "message": "Achtergrondkleur feedbackdialoog",
     "description": "Feedback dialog background color"
   }
 }
