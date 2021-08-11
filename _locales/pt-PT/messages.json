@@ -88,47 +88,47 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Show toolbarbutton icon",
+    "message": "Mostrar ícone do botão da barra de ferramentas",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Message pane icon config",
+    "message": "Configuração do ícone do painel de mensagens",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Display the icon in the message pane",
+    "message": "Mostra o ícone no painel de mensagens",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "The position of the icon display in the message pane",
+    "message": "A posição da exibição do ícone no painel de mensagem",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
-    "message": "Top:",
+    "message": "Topo:",
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Right:",
+    "message": "Certo:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Icon size:",
+    "message": "Tamanho do ícone:",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Hide the icon after a certain period of time",
+    "message": "Esconda o ícone após um certo período de tempo",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
-    "message": "(sec)",
+    "message": "(seg)",
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 seconds, the icon will remain displayed",
+    "message": "*0 segundos, o ícone permanecerá exibido",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Feedback dialog background color",
+    "message": "Cor de fundo da caixa de diálogo de feedback",
     "description": "Feedback dialog background color"
   }
 }
