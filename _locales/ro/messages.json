@@ -124,7 +124,7 @@
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "* 0 secunde, pictograma va rămâne afișată",
+    "message": "*0 secunde, pictograma va rămâne afișată",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
