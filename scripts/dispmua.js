@@ -210,7 +210,8 @@ function connected(p) {
         });
         break;
       case 'beginNew':
-        browser.compose.beginNew({to: m.to, subject: m.subject, body: m.body, identityId: m.identityId});
+        //browser.compose.beginNew({to: m.to, subject: m.subject, body: m.body, identityId: m.identityId});
+        browser.compose.beginNew({to: m.to, subject: m.subject, plainTextBody: m.body, identityId: m.identityId, isPlainText: true});
         break;
       case 'openURL':
         browser.tabs.create({url: m.url});

@@ -5,6 +5,11 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.5.33 2021-8-27
+- Some more icon(2169 now)
+- Added user-agent string
+- Since TB91 sends by HTML mail, feedback mail is fixed to plain text
+
 2.5.32 2021-8-19
 - Some more icon(2168 now)
 
