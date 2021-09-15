@@ -218,6 +218,13 @@ dispMUA.searchIcon = (strUserAgent) =>
         dispMUA.Info["ICON"] = tb + "x11.png";
       }
     }
+    else if (dispMUA.Info["ICON"] == "betterbird.png")
+    {
+      if ((lower.indexOf("(windows") > -1) || (lower.indexOf("; windows") > -1))
+      {
+        dispMUA.Info["ICON"] = "betterbird-windows.png";
+      }
+    }
   }
   else if (strExtra != "")
   {
