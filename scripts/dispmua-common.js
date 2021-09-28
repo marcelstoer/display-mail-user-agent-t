@@ -220,9 +220,14 @@ dispMUA.searchIcon = (strUserAgent) =>
     }
     else if (dispMUA.Info["ICON"] == "betterbird.png")
     {
-      if ((lower.indexOf("(windows") > -1) || (lower.indexOf("; windows") > -1))
+      let tb = "betterbird-";
+      if (lower.indexOf("; linux") > -1)
       {
-        dispMUA.Info["ICON"] = "betterbird-windows.png";
+        dispMUA.Info["ICON"] = tb + "linux.png";
+      }
+      else if ((lower.indexOf("(windows") > -1) || (lower.indexOf("; windows") > -1))
+      {
+        dispMUA.Info["ICON"] = tb + "windows.png";
       }
     }
   }
