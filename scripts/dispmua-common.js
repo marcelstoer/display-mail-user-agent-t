@@ -253,6 +253,7 @@ dispMUA.searchIcon = (strUserAgent) =>
     {
       dispMUA.Info["ICON"] = "gitlab.png";
       dispMUA.Info["STRING"] = "x-gitlab-project";
+      dispMUA.Info["URL"] = "https://about.gitlab.com/";
       dispMUA.Info["FOUND"] = true;
     }
     else if (strExtra == "o365")
