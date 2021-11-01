@@ -61,6 +61,10 @@ dispMUA.searchIcon = (strUserAgent) =>
   {
     strExtra = "phpbug";
   }
+  else if (dispMUA.getHeader("x-gitlab-project"))
+  {
+    strExtra = "gitlab";
+  }
   //not good. If not found and an Office 365 user, the icon will be Office 365
   else if (/*dispMUA.getHeader("x-ms-office365-filtering-correlation-id") &&
            dispMUA.getHeader("x-ms-publictraffictype"))*/
@@ -243,6 +247,12 @@ dispMUA.searchIcon = (strUserAgent) =>
     {
       dispMUA.Info["ICON"] = "bug.png";
       dispMUA.Info["STRING"] = "X-PHP-Bug";
+      dispMUA.Info["FOUND"] = true;
+    }
+    else if (strExtra == "gitlb")
+    {
+      dispMUA.Info["ICON"] = "gitlab.png";
+      dispMUA.Info["STRING"] = "x-gitlab-project";
       dispMUA.Info["FOUND"] = true;
     }
     else if (strExtra == "o365")

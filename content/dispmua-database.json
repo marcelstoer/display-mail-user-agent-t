@@ -36,6 +36,7 @@
 	  "amlc" : ["amlc.png", "http://www.arclab.com/products/amlc/"],
 	  "tin" : ["tin.png", "http://www.tin.org/"],
 	  "php" : ["php.png", "http://www.php.net/"],
+	  "oci" : ["oci.png", "https://www.oracle.com/cloud/"],
 	  "mp5" : ["mail-performance.png", "http://www.mailperformance.com/"],
 	  "mp6" : ["mail-performance.png", "http://www.mailperformance.com/"],
 	  "jbs" : ["jbs.png", "http://joonte.com/Index"],
