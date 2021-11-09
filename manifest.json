@@ -9,7 +9,7 @@
   "applications": {
     "gecko": {
       "id": "DisplayMailUserAgent-T@Toshi_",
-      "strict_min_version": "74.0a1"
+      "strict_min_version": "79.0a1"
     }
   },
   "permissions": [
