@@ -8,35 +8,35 @@
     "description": "Description of the add-on."
   },
   "feedback.title": {
-    "message": "Lämna kommentar",
+    "message": "Lämna feedback",
     "description": "feedback title"
   },
   "feedback.button.send": {
-    "message":  "Skriv kommentar",
+    "message":  "Skicka feedback",
     "description": "title of feedback send button"
   },
   "feedback.button.close": {
-    "message":  "Placera ikonen till vänster",
+    "message":  "Stäng",
     "description": "title of feedback close button"
   },
   "dispMUA.NoUserAgent": {
-    "message": "Brevet innehåller ingen uppgift om avsändarens e-postprogram.",
+    "message": "E-postmeddelandet innehåller ingen uppgift om e-postprogram.",
     "description": "no MUA"
   },
   "dispMUA.supported": {
-    "message": "Detta e-postprogram är redan bekant.",
+    "message": "Detta e-postprogram är redan bekant !",
     "description": "MUA supported"
   },
   "dispMUA.NOTsupported": {
-    "message": "E-postprogrammet är obekant.",
+    "message": "E-postprogrammet är INTE känt !",
     "description": "MUA not supported"
   },
   "feedback.mailinfo1": {
-    "message": "Skriv ett brev om något e-postprogram inte finns",
+    "message": "Skicka mig ett meddelande om e-postprogrammet inte finns",
     "description": "feedback mail info 1"
   },
   "feedback.mailinfo2": {
-    "message": "medtaget eller om du inte gillar ikonen.",
+    "message": "och saknas eller om du inte gillar ikonen.",
     "description": "feedback mail info 2"
   },
   "feedback.iconinfo": {
@@ -44,7 +44,7 @@
     "description": "feedback icon info"
   },
   "feedback.subject": {
-    "message": "dispMUA: Användares kommentar",
+    "message": "dispMUA: Feedback",
     "description": "feedback mail subject"
   },
   "feedback.body.MUA": {
@@ -60,7 +60,7 @@
     "description": "feedback mail body URL"
   },
   "options.icon.notify": {
-    "message": "Ikonskärmen använder WebExtensionsexperiment, vilket inte rekommenderas, och kan vara tillgängligt förr snarare än senare.",
+    "message": "Ikon-visningen använder WebExtension Experiment, vilket inte rekommenderas, och kan komma att bli otillgängligt förr än senare.",
     "description": "icon display notity"
   },
   "options.icon.show": {
@@ -72,7 +72,7 @@
     "description": "Icon Location"
   },
   "options.button.apply": {
-    "message": "Tillämpa",
+    "message": "Använd",
     "description": "apply button"
   },
   "options.button.import": {
@@ -108,11 +108,11 @@
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Rätt:",
+    "message": "Höger:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Ikonstorlek:",
+    "message": "Ikon-storlek:",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
