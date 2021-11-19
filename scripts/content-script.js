@@ -9,11 +9,6 @@
     }
     window.hasRun = true;
   
-    /**
-     * Given a URL to a beast image, remove all existing beasts, then
-     * create and style an IMG node pointing to
-     * that image, then insert the node into the document.
-     */
     function insertIcon(iconURL, MUA, iconSize, hideTime) {
       removeExistingIcons();
       let dispMUAImage = document.createElement("img");
@@ -50,7 +45,7 @@
               <label id="feedback-supported"/>
           </div>
           <div class="icon">
-              <image id="feedback-icon" src="" style="width:48px; height: 48px;" />
+              <image id="feedback-icon" src="" style="width:48px; height:48px;" />
           </div>
           <div class="throbber">
               <image id="feedback-throbber" src=""/>
@@ -62,8 +57,11 @@
           <input id="feedback-iconinfo" type="text" readonly="readonly" class="flat" />
       </div>
       <div class="wrapbutton">
+        <div>
+          <image id="feedback-openoption" src="chrome://messenger/skin/icons/developer.svg" style="position:relative; top:5px; left:1px"/>
           <input type="button" id="feedback-button-send""/>
-          <input type="button" id="feedback-button-close"/>
+        </div>
+        <input type="button" id="feedback-button-close"/>
       </div>`;
       feedback.innerHTML = content;
       document.body.appendChild(feedback);
@@ -71,6 +69,7 @@
       document.getElementById("feedback-button-close").addEventListener("click", doClose);
       //document.getElementById("feedback-icon").addEventListener("click", doOpenURL(info.url));
       document.getElementById("feedback-icon").addEventListener("click", {handleEvent: doOpenURL, url: info.url, eid: info.eid});
+      document.getElementById("feedback-openoption").addEventListener("click", function(){port.postMessage({command: "openURL", url: "/content/options.html"})});
     }
 
     function showFeedback() {
@@ -79,9 +78,6 @@
       console.log("shoeFeedback executed.");
     }
 
-    /**
-     * Remove every beast from the page.
-     */
     function removeExistingIcons() {
       let existingIcons = document.querySelectorAll(".dispMUA-icon");
       for (let icon of existingIcons) {
@@ -138,8 +134,6 @@
       }
       document.getElementById("feedback-MUA1").value = MUAstring1;
       document.getElementById("feedback-MUA2").value = MUAstring2;
-      //not supported "#990000",
-      //suported #008800
       let color = s.found ? "#008800" : "#990000";
       document.getElementById("feedback-supported").setAttribute("style", "color:" + color);
       let supported = s.found ? browser.i18n.getMessage("dispMUA.supported") : browser.i18n.getMessage("dispMUA.NOTsupported");
@@ -159,6 +153,7 @@
       document.getElementById("feedback-mailinfo1").value = browser.i18n.getMessage("feedback.mailinfo1");
       document.getElementById("feedback-mailinfo2").value = browser.i18n.getMessage("feedback.mailinfo2");
       document.getElementById("feedback-iconinfo").value = browser.i18n.getMessage("feedback.iconinfo");
+      document.getElementById("feedback-openoption").setAttribute("title", "Options");
       document.getElementById("feedback-button-send").value = browser.i18n.getMessage("feedback.button.send");
       document.getElementById("feedback-button-close").value = browser.i18n.getMessage("feedback.button.close");;
     }

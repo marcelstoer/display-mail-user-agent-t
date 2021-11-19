@@ -5,6 +5,10 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.6.7 2021-11-20
+- Added a button to open an options page in the feedback form.
+- Some more icon(2187 now)
+
 2.6.6 2021-11-11
 - Added 2 user-agent strings
 - Fixed Swedish translation. Thanks Jorgen.
