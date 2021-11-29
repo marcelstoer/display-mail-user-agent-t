@@ -59,18 +59,6 @@
     "message": "Ви знаєте веб-сайт цього поштового агента?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "На дисплеї піктограм використовуються експерименти WebExtension, які не рекомендується, і вони можуть бути недоступними раніше, ніж пізніше.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Відобразити піктограму як зображення.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Значок місця зліва",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Застосувати",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Колір фону діалогового вікна зворотного зв'язку",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Параметри",
+    "description": "Options"
   }
 }

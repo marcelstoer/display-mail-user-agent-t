@@ -59,18 +59,6 @@
     "message": "¿Sabes cuál es su página web?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "La visualización de los iconos utiliza los experimentos de extensión de la web, lo que no es recomendable, y puede no estar disponible más pronto que tarde.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Mostrar el icono como una imagen.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Coloque el ícono a la izquierda",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Aplique",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Color de fondo del cuadro de diálogo de comentarios",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Opciones",
+    "description": "Options"
   }
 }

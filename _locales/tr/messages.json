@@ -59,18 +59,6 @@
     "message": "Bu kullanıcı aracısının web sitesini biliyor musunuz?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "Simge ekranı, önerilmeyen WebExtension Denemeleri'ni kullanır ve daha sonra değil, daha erken kullanılamaz.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Simgeyi bir görüntü olarak görüntüler.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Simgeyi sola yerleştirin",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Uygulamak",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Geri bildirim iletişim kutusu arka plan rengi",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Seçenekler",
+    "description": "Options"
   }
 }

@@ -59,18 +59,6 @@
     "message": "Falls bekannt, nennen Sie bitte die Homepage der vorgenannten E-Mail-Anwendung:",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "Die Symbolanzeige verwendet WebExtension-Experimente, was nicht empfohlen wird und eher früher als später nicht mehr verfügbar sein wird.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Symbol als Bild anzeigen.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Symbol links platzieren",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Anwenden",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": " Hintergrundfarbe des Feedback-Dialogs",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Optionen",
+    "description": "Options"
   }
 }

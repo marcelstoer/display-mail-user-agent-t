@@ -59,18 +59,6 @@
     "message": "您知道此網站的 user agent 嗎？",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "圖標顯示使用WebExtension Experiments（不建議這樣做），它可能會在不久的將來而不可用。",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "將圖標顯示為圖像。",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "將圖標放在左側",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "應用",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "反饋對話框背景色",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "配置",
+    "description": "Options"
   }
 }

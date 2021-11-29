@@ -59,18 +59,6 @@
     "message": "Czy znasz adres strony internetowej tego programu?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "Wyświetlanie ikon wykorzystuje WebExtension Experiments, co nie jest zalecane i może być niedostępne wcześniej niż później.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Wyświetlić ikonę jako obraz.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Umieść ikonę po lewej stronie",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Zastosować",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Kolor tła okna dialogowego opinii",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Opcje",
+    "description": "Options"
   }
 }

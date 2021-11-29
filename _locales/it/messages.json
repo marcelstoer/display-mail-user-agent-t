@@ -59,18 +59,6 @@
     "message": "Sito web per l'user agent?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "Il display a icone utilizza gli esperimenti di WebExtension, che non sono raccomandati, e potrebbero non essere disponibili al più presto.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Visualizzare l'icona come immagine.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Posiziona l'icona a sinistra",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Applicare",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Colore di sfondo della finestra di dialogo di feedback",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Opzioni",
+    "description": "Options"
   }
 }

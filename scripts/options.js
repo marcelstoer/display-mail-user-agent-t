@@ -62,9 +62,7 @@ function restoreOptions() {
   }
 
   // localization
-  //document.getElementById("notifyIconLbl").textContent = browser.i18n.getMessage("options.icon.notify");
-  //document.getElementById("showIconLbl").textContent = browser.i18n.getMessage("options.icon.show");
-  //document.getElementById("iconPositionLbl").textContent = browser.i18n.getMessage("options.icon.position");
+  document.title = browser.i18n.getMessage("extensionName") + " " + browser.i18n.getMessage("options.options");
   document.getElementById("showToolbarButtonLbl").textContent = browser.i18n.getMessage("options.icon.showToolbarButton");
   document.getElementById("messagePaneIcon").textContent = browser.i18n.getMessage("options.icon.messagePaneIcon");
   document.getElementById("showMessagePaneIconLbl").textContent = browser.i18n.getMessage("options.icon.showMessagePaneIcon");

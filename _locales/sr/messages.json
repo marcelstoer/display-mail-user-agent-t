@@ -59,18 +59,6 @@
     "message": "Да ли знате интернетску страницу тог корисничког агента?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "Екран икона користи експерименте ВебЕктенсион, који се не препоручују, а можда ће ускоро бити доступни и пре.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Прикажите икону као слику.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Поставите икону лево",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Применити",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Боја позадине дијалога за повратне информације",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Опције",
+    "description": "Options"
   }
 }

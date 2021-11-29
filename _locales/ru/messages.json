@@ -59,18 +59,6 @@
     "message": "Вы знаете веб-сайт этого юзер-агента?",
     "description": "feedback mail body URL"
   },
-  "options.icon.notify": {
-    "message": "Отображение иконки использует эксперименты с WebExtension, что не рекомендуется и может быть недоступно рано или поздно.",
-    "description": "icon display notity"
-  },
-  "options.icon.show": {
-    "message": "Отобразить значок в виде изображения.",
-    "description": "Show icon image"
-  },
-  "options.icon.position": {
-    "message": "Поместите значок слева",
-    "description": "Icon Location"
-  },
   "options.button.apply": {
     "message": "Подать заявление",
     "description": "apply button"
@@ -130,5 +118,9 @@
   "options.icon.feedbackBgcolor": {
     "message": "Цвет фона диалогового окна обратной связи",
     "description": "Feedback dialog background color"
+  },
+  "options.options": {
+    "message": "Параметры",
+    "description": "Options"
   }
 }

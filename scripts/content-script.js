@@ -160,7 +160,7 @@
       document.getElementById("feedback-mailinfo1").value = browser.i18n.getMessage("feedback.mailinfo1");
       document.getElementById("feedback-mailinfo2").value = browser.i18n.getMessage("feedback.mailinfo2");
       document.getElementById("feedback-iconinfo").value = browser.i18n.getMessage("feedback.iconinfo");
-      document.getElementById("feedback-openoption").setAttribute("title", "Options");
+      document.getElementById("feedback-openoption").setAttribute("title", browser.i18n.getMessage("Options.options"));
       document.getElementById("feedback-button-send").value = browser.i18n.getMessage("feedback.button.send");
       document.getElementById("feedback-button-close").value = browser.i18n.getMessage("feedback.button.close");;
     }
