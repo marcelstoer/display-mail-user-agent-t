@@ -5,6 +5,13 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.6.8 2021-11-30
+- Fixed Deutsch translation. Thanks Benji Kuster.
+- Enabled to open and close only with the toolbar button. Thanks Jorgen.
+- Set a title on the options tab. Thanks Jorgen.
+- Fixed Swedish translation. Thanks Jorgen.
+- Some more icon(2188 now)
+
 2.6.7 2021-11-20
 - Added a button to open an options page in the feedback form.
 - Some more icon(2187 now)

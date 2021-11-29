@@ -2,7 +2,7 @@ const iId = "dispMUAicon";
 
 browser.messageDisplayAction.onClicked.addListener((tabId) => {
   if (dispMUA.Info["ICON"] != "empty.png") {
-    port.postMessage({command: "show feedback"});
+    port.postMessage({command: "toggle feedback"});
   };
 });
 
@@ -129,7 +129,6 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
       }
     });
     if (dispMUA.headers["x-mozilla-keys"] !== undefined) {
-      //意味なし。空白文字は削除されるっぽく、ヘッダのみだと改行がされない。compose側のバグか？
       //No meaning. Whitespace characters seem to be deleted, and line breaks are not made if only the header is used. Is it a bug on the compose side?
       if (dispMUA.headers["x-mozilla-keys"][0].length == 0) dispMUA.headers["x-mozilla-keys"][0] = '\r\n';
     }
@@ -161,9 +160,9 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
 
     browser.storage.local.get().then((s) => {
       if (s.showToolbarButton) browser.messageDisplayAction.enable(tabId.id);
-      console.log("before executeScript.");
+      //console.log("before executeScript.");
       executing.then(() => {
-        console.log("executeScript done. tabid:" + tabId.id);
+        //console.log("executeScript done. tabid:" + tabId.id);
         //*Error: can't access property "url", info is undefined. why?
         let url = "";
         if (dispMUA.Info["PATH"] == "") { // overlay
@@ -179,13 +178,13 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
           url = browser.runtime.getURL("") + dispMUA.Info["PATH"] + dispMUA.Info["ICON"];
         }
         //browser.tabs.sendMessage(tabId.id, {command: "set", iconURL: url, MUA: dispMUA.Info["STRING"]});
-        console.log("option value showMessagePaneIcon:" + s.showMessagePaneIcon);
+        //console.log("option value showMessagePaneIcon:" + s.showMessagePaneIcon);
         if (s.showMessagePaneIcon) {
           port.postMessage({command: "set", iconURL: url, MUA: dispMUA.Info["STRING"], iconSize: s.iconSize, hideTime: s.hideIconTime});
         }
       }).catch((e) => {
         console.log("executeScript error: " + e.message);
-      }).then(() => {console.log("finaly executeScript.")});
+      }).then(() => {/*console.log("finaly executeScript.")*/});
     });
   });
 });

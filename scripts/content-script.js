@@ -118,7 +118,14 @@
         case 'show feedback':
           //insertFeedback(s);
           showFeedback();
-          document.getElementById("dispMUAicon").click();
+          //document.getElementById("dispMUAicon").click();
+          break;
+        case 'toggle feedback':
+          if (document.getElementById("feedbackdiv").style.visibility == "visible") {
+            doClose();
+          } else {
+            showFeedback();
+          }
           break;
       }
     });

@@ -24,11 +24,11 @@
     "description": "no MUA"
   },
   "dispMUA.supported": {
-    "message": "Detta e-postprogram är redan bekant !",
+    "message": "Detta e-postprogram är redan bekant",
     "description": "MUA supported"
   },
   "dispMUA.NOTsupported": {
-    "message": "E-postprogrammet är INTE känt !",
+    "message": "E-postprogrammet är INTE känt",
     "description": "MUA not supported"
   },
   "feedback.mailinfo1": {
@@ -36,7 +36,7 @@
     "description": "feedback mail info 1"
   },
   "feedback.mailinfo2": {
-    "message": "och saknas eller om du inte gillar ikonen.",
+    "message": "med i tillägget eller om du inte gillar ikonen.",
     "description": "feedback mail info 2"
   },
   "feedback.iconinfo": {
@@ -124,11 +124,11 @@
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 sekunder, ikonen förblir visas",
+    "message": "*0 sekunder, ikonen förblir visad",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Bakgrundsfärg för feedback -dialog",
+    "message": "Bakgrundsfärg för feedback-dialog",
     "description": "Feedback dialog background color"
   }
 }

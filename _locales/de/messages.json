@@ -4,7 +4,7 @@
     "description": "Name of the extension."
   },
   "extensionDescription": {
-    "message": "Zeigt ein Symbol der E-Mail-Anwendung, mit welcher die gewählte Nachricht verfasst wurde",
+    "message": "Zeigt das Symbol der E-Mail-Anwendung, mit welcher die zurzeit angezeigte Nachricht verfasst wurde.",
     "description": "Description of the add-on."
   },
   "feedback.title": {
@@ -20,7 +20,7 @@
     "description": "title of feedback close button"
   },
   "dispMUA.NoUserAgent": {
-    "message": "Keine Kennung einer E-Mail-Anwendung in dieser Nachricht vorhanden",
+    "message": "Keine Kennung für eine E-Mail-Anwendung in dieser Nachricht vorhanden.",
     "description": "no MUA"
   },
   "dispMUA.supported": {
@@ -52,7 +52,7 @@
     "description": "feedback mail body MUA"
   },
   "feedback.body.icon": {
-    "message": "Sie möchten eine neue Symbol-Grafik zur Verfügung stellen?",
+    "message": "Möchten Sie eine neue Symbol-Grafik zur Verfügung stellen?",
     "description": "feedback mail body icon"
   },
   "feedback.body.url": {
@@ -60,15 +60,15 @@
     "description": "feedback mail body URL"
   },
   "options.icon.notify": {
-    "message": "Die Symbolanzeige verwendet WebExtension-Experimente, was nicht empfohlen wird und eher früher als später nicht verfügbar sein kann.",
+    "message": "Die Symbolanzeige verwendet WebExtension-Experimente, was nicht empfohlen wird und eher früher als später nicht mehr verfügbar sein wird.",
     "description": "icon display notity"
   },
   "options.icon.show": {
-    "message": "Zeigen Sie das Symbol als Bild an.",
+    "message": "Symbol als Bild anzeigen.",
     "description": "Show icon image"
   },
   "options.icon.position": {
-    "message": "Symbol nach links platzieren",
+    "message": "Symbol links platzieren",
     "description": "Icon Location"
   },
   "options.button.apply": {
@@ -80,7 +80,7 @@
     "description": "import label for button"
   },
   "options.button.export": {
-    "message": "Export",
+    "message": "Exportieren",
     "description": "export button"
   },
   "options.button.applyOl": {
@@ -88,47 +88,47 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Symbolleistenschaltflächensymbol anzeigen",
+    "message": "Symbol als Schaltfläche in der Symbolleiste anzeigen",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Symbolkonfiguration des Nachrichtenbereichs",
+    "message": "Konfiguration des Symbols im Nachrichtenbereich",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Zeigen Sie das Symbol im Nachrichtenbereich an",
+    "message": "Symbol im Nachrichtenbereich anzeigen",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "Die Position der Symbolanzeige im Nachrichtenfenster",
+    "message": "Abstand des Symbols zum Fensterrand im Nachrichtenfenster (in Pixel)",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
-    "message": "Oberteil:",
+    "message": "oben: ",
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Richtig:",
+    "message": "rechts: ",
     "description": "Right:"
   },
   "options.icon.iconSize": {
-    "message": "Symbolgröße:",
+    "message": "Symbolgröße: ",
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Ausblenden des Symbols nach einer bestimmten Zeit",
+    "message": "Ausblenden des Symbols nach einer bestimmten Zeit. ",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
-    "message": "(Sek.)",
+    "message": " Sek.",
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 Sekunden, das Symbol bleibt angezeigt",
+    "message": "* Bei 0 Sekunden, bleibt das Symbol immer angezeigt",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.feedbackBgcolor": {
-    "message": "Hintergrundfarbe des Feedback-Dialogs",
+    "message": " Hintergrundfarbe des Feedback-Dialogs",
     "description": "Feedback dialog background color"
   }
 }
