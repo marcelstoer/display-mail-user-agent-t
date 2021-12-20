@@ -5,6 +5,7 @@
 	  "libreoffice 4.2 via caolan's mailmerge component" : ["libreoffice.png", "https://github.com/LibreOffice/core/blob/master/scripting/source/pyprov/mailmerge.py"],
 	  "4sellers mailmanagement system" : ["4sellers.png", "https://www.4sellers.de/software/integration/newsletter/"],
 	  "iris passpa-benachrichtigung" : ["noicon.png"],
+	  "processwire/wiremailsmtp" : ["processwire.png", "https://processwire.com/"],
 	  "obs notification system" : ["obs.png", "https://openbuildservice.org/"],
 	  "details mailer system" : ["noicon.png"],
 	  "sbs hrm es framework" : ["noicon.png"],
@@ -16,6 +17,7 @@
 	  "deltagon sec@gw" : ["deltagon.png", "https://www.deltagon.com/"],
 	  "amazon workmail" : ["amazonworkmail.png", "https://aws.amazon.com/workmail/"],
 	  "amlc de arclab" : ["amlcdearclab.png", "https://www.arclab.com/en/amlc/"],
+	  "melddesk mail" : ["melddeskmail.png", "https://www.beheervisie.nl/meldingenmanagement/melddesk-in-het-kort/"],
 	  "hosting cloud" : ["hostingcloud.png", "https://hostingcloud.com.au/"],
 	  "ccm benchmark" : ["ccmbenchmark.png", "https://www.ccmbenchmark.com/"],
 	  "symplify.com" : ["symplify.png", "https://symplify.com/communication/"],
@@ -39,6 +41,7 @@
 	  "splio" : ["splio.png", "https://www.splio.com/"],
 	  "pixi" : ["pixi.png", "http://www.madgeniuses.net/pixi-versandhandelssoftware.html"],
 	  "mu-b" : ["rakuten.png", "https://emagazine.rakuten.co.jp/"],
+	  "Koha" : ["koha.png", "https://koha-community.org/"],
 	  "amlc" : ["amlc.png", "http://www.arclab.com/products/amlc/"],
 	  "tin" : ["tin.png", "http://www.tin.org/"],
 	  "php" : ["php.png", "http://www.php.net/"],
@@ -167,6 +170,7 @@
 "[":
 	{
 	  "[alimail-mailagent]": ["aliexpress.png", "https://www.aliexpress.com/"],
+	  "[alimail-mailagent" : ["alimail-mailagent.png","https://www.alibabacloud.com/product/directmail"],
 	  "[ivo-expressivo]" : ["expressivo.png", "http://www.expressivo.com/"],
 	  "[isd]justsystem" : ["justsystems.png", "http://www.justsystems.com/"],
 	  "[ai:ti]" : ["aiti.png", "http://www.aiti.at/"]
@@ -401,6 +405,7 @@
 	  "cart managment system at http://linuxcenter.ru" : ["linuxcenter_ru.png", "http://www.linuxcenter.ru/"],
 	  "couchsurfing mailer daemon" : ["couchsurfing.png", "http://www.couchsurfing.com/"],
 	  "coppermine photo gallery" : ["coppermine.png", "http://coppermine-gallery.net/"],
+	  "contactpigeon.com mailer" : ["contactpigeon.png", "https://www.contactpigeon.com/"],
 	  "com.apple.wwdr.jmsmailer" : ["apple.png", "http://store.apple.com/"],
 	  "contao open source cms" : ["contao.png", "https://contao.org/"],
 	  "codestone mail control" : ["codestone.png", "http://www.codestone.ltd.uk/"],
@@ -1304,6 +1309,7 @@
 "m":
 	{
 	  "mail.backend.jedi.jws.acl:role.jedi.acl.token.atz.jws.hermes.yahoo" : ["yahoomail.png", "https://mail.yahoo.com/"],
+	  "mail.backend.jedi.jws.acl:role.jedi.acl.token.atz.jws.hermes.aol" : ["aol2.png","https://login.aol.com/"],
 	  "mailer by oracle utl_smtp - used by psu foundation" : ["psufmailer.png", "http://www.foundation.pdx.edu/"],
 	  "multi box - interfejs www poczty orange.pl" : ["orange.png", "http://www.orange.pl/", "orange.pl"],
 	  "messagerie internet de microsoft/mapi" : ["ms_patch.png", "http://www.microsoft.com/"],
@@ -1338,6 +1344,7 @@
 	  "microsoft-macoutlook" : ["outlookmac.png", "http://www.microsoft.com/"],
 	  "microsoft outlook 16" : ["outlook1516.png", "http://www.microsoft.com/"],
 	  "microsoft outlook 15" : ["outlook1516.png", "http://www.microsoft.com/"],
+	  "microsoft outlook 14" : ["outlook14.png", "https://www.microsoft.com/office/"],
 	  "mailer at germany.ru" : ["germany_ru.png", "http://www.germany.ru/"],
 	  "mozilla-thunderbird" : ["thunderbird.png", "http://www.mozilla.com/thunderbird/"],
 	  "mozilla thunderbird" : ["thunderbird.png", "http://www.mozilla.com/thunderbird/"],
@@ -2419,6 +2426,7 @@
 	  "x-mailer" : ["x-mailer.png", "http://www.x-mailer.info/"],
 	  "xananews" : ["xananews.png", "http://www.wilsonc.demon.co.uk/xananews.htm"],
 	  "xs2mail" : ["xs2mail.png", "http://www.xs2mail.com/"],
+	  "xeexoid" : ["xeexoid.png", "https://www.xeex.cz/"],
 	  "xanario" : ["xanario_de.png", "http://www.xanario.de/"],
 	  "x-sharp" : ["sharp.png", "http://www.sharp.co.jp/"],
 	  "x-point" : ["x-point.png"],
