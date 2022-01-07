@@ -115,6 +115,14 @@
     "message": "*0 másodpercig az ikon továbbra is látható marad",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Rögzítse az ikon helyzetét",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Szűkítse le az üzenetablak szélességét, hogy az ikonok ne fedjék egymást",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Visszajelzés párbeszédablak háttérszíne",
     "description": "Feedback dialog background color"

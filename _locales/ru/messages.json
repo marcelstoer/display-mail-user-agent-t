@@ -115,6 +115,14 @@
     "message": "*0 секунд, значок останется отображаться",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Исправить положение значка",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Уменьшите ширину панели сообщений, чтобы значки не перекрывали друг друга",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Цвет фона диалогового окна обратной связи",
     "description": "Feedback dialog background color"

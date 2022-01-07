@@ -115,6 +115,14 @@
     "message": "*0 segons, la icona romandrà visualitzada",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Fixeu la posició de la icona",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Redueix l'amplada del panell de missatges perquè les icones no se superposin",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Color de fons del diàleg de retroalimentació",
     "description": "Feedback dialog background color"

@@ -116,6 +116,14 @@
     "message": "※0秒にするとアイコンは表示されたままになります",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "アイコン位置を固定する",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "アイコンが重ならないようメッセージペインの幅を狭める",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "フィードバックダイアログの背景色",
     "description": "Feedback dialog background color"

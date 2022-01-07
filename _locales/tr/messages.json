@@ -115,6 +115,14 @@
     "message": "*0 saniye, simge görüntülenmeye devam edecek",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Simgenin konumunu düzeltin",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Simgelerin üst üste gelmemesi için mesaj bölmesinin genişliğini daraltın",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Geri bildirim iletişim kutusu arka plan rengi",
     "description": "Feedback dialog background color"

@@ -115,6 +115,14 @@
     "message": "*0 seconden, het pictogram blijft weergegeven",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "De positie van het pictogram corrigeren",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Beperk de breedte van het berichtenvenster zodat de pictogrammen elkaar niet overlappen",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Achtergrondkleur feedbackdialoog",
     "description": "Feedback dialog background color"

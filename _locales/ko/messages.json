@@ -115,6 +115,14 @@
     "message": "*0초, 아이콘은 계속 표시됩니다.",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "아이콘 위치 고정",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "아이콘이 겹치지 않도록 메시지 창의 너비를 좁힙니다.",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "피드백 대화 상자 배경색",
     "description": "Feedback dialog background color"

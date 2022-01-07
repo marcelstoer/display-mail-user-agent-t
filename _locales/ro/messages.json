@@ -115,6 +115,14 @@
     "message": "*0 secunde, pictograma va rămâne afișată",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Fixați poziția pictogramei",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Restrângeți lățimea panoului de mesaje, astfel încât pictogramele să nu se suprapună",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Culoarea fundalului dialogului de feedback",
     "description": "Feedback dialog background color"

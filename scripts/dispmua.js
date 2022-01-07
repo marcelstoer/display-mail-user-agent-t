@@ -17,6 +17,8 @@ function setDefault(opt) {
       iconPosRight: 8,
       iconSize: 48,
       hideIconTime: 0,
+      iconPosFix: false,
+      narrowMessagePane: false,
       feedbackBgcolor: "#ffe4c4",
     /*}).then((vv) => {
       console.log("option value showMessagePaneIcon(dispmua.js):" + vv.showMessagePaneIcon);*/
@@ -29,6 +31,8 @@ function setDefault(opt) {
       iconPosRight: 8,
       iconSize: 48,
       hideIconTime: 0,
+      iconPosFix: false,
+      narrowMessagePane: false,
       feedbackBgcolor: "#ffe4c4",
     };
   } else {
@@ -152,7 +156,12 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     browser.messageDisplayAction.setTitle({title: str});  //API is now available(Added in TB 84.0b3, backported to TB 78.6.1) so I don't have to truncate strings.
 
     browser.tabs.insertCSS(tabId.id, {code:
-      ".dispMUA-icon {z-index: 1; position: absolute; right: " + options.iconPosRight + "px; top: " + options.iconPosTop + "px; transition:opacity 1000ms;} " +
+      ".dispMUA-icon {z-index: 1; position: " + (options.iconPosFix ? "fixed" : "absolute") + "; right: " + options.iconPosRight + "px; top: " + options.iconPosTop + "px; transition:opacity 1000ms;} " +
+      (options.narrowMessagePane ?
+        ".moz-text-html {width: calc(100% - " + (+options.iconSize + 1) + "px);} " +
+        ".moz-text-flowed {width: calc(100% - " + (+options.iconSize + 1) + "px);} " +
+        ".moz-text-plain[wrap=\"true\"] {white-space: pre-wrap; width: calc(100% - " + (+options.iconSize + 1) + "px);} "
+        : "") +
       ".popup-page {position: absolute; right: 8px; top: 8px; border: 1px; border-color: #0; border-style: soiid; border-radius: 5px; padding: 5px; background-color: " + options.feedbackBgcolor + ";} " +
       "#feedbackdiv {z-index: 2; opacity: 0; transition:opacity 500ms;} " +
       "input.flat {border: 0; width: 100%; background-color: " + options.feedbackBgcolor + ";} .wrap {display: flex; } .icon {width: 48px; height: 48px;} .throbber {width: 16px; height:16px; margin-left:3px; } .wrapbutton {display: flex; justify-content: space-between;}"}

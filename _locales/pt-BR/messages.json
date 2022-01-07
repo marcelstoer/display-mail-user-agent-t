@@ -115,6 +115,14 @@
     "message": "*0 segundos, o ícone permanecerá exibido",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Corrija a posição do ícone",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Reduza a largura do painel de mensagens para que os ícones não se sobreponham",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Cor de fundo de diálogo de feedback",
     "description": "Feedback dialog background color"

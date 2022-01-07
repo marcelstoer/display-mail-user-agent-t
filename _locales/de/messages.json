@@ -115,6 +115,14 @@
     "message": "* Bei 0 Sekunden, bleibt das Symbol immer angezeigt",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Fixieren Sie die Position des Symbols",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Verkleinern Sie die Breite des Nachrichtenbereichs, damit sich die Symbole nicht überlappen",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": " Hintergrundfarbe des Feedback-Dialogs",
     "description": "Feedback dialog background color"

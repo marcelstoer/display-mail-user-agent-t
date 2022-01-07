@@ -13,12 +13,14 @@
         <div><input type="checkbox" id="showMessagePaneIcon"><label id="showMessagePaneIconLbl" for="showMessagePaneIcon"/></div>
         <fieldset>
           <legend id="iconPosLbl"></legend>
-          <label id="iconPosTopLbl" for="iconPosTop"></label><input type="text" size="3" id="iconPosTop">
-          <label id="iconPosRightLbl" for="iconPosRight"></label><input type="text" size="3" id="iconPosRight"><label>   default 8 8</label>
+          <label id="iconPosTopLbl" for="iconPosTop"></label><input type="number" size="3" id="iconPosTop">
+          <label id="iconPosRightLbl" for="iconPosRight"></label><input type="number" size="3" id="iconPosRight"><label>   default 8 8</label>
         </fieldset>
-        <label id="iconSizeLbl" for="iconSize"></label><input type="text" size="2" id="iconSize"><label>   default 48px</label>
-        <div><label id="hideIconTimeLbl"></label><input type="text" size="1" id="hideIconTime"><label id="hideSecLbl"></label></div>
+        <label id="iconSizeLbl" for="iconSize"></label><input type="number" size="4" id="iconSize"><label>   default 48px</label>
+        <div><label id="hideIconTimeLbl"></label><input type="number" size="1" id="hideIconTime"><label id="hideSecLbl"></label></div>
         <div><label id="zeroCautionLbl"></label></div>
+        <div><input type="checkbox" id="iconPosFix"><label id="iconPosFixLbl" for="iconPosFix">Fix the position of the icon</label></div>
+        <div><input type="checkbox" id="narrowMessagePane"><label id="narrowMessagePaneLbl" for="narrowMessagePane">Narrowing the width of the message pane for icons</label></div>
       </fieldset>
       <div><input type="color" id="feedbackBgcolor">  <label id="feedbackBgcolorLbl" for="feedbackBgcolor"></label></div>
 

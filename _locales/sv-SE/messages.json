@@ -115,6 +115,14 @@
     "message": "*0 sekunder, ikonen förblir visad",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Fixa ikonens position",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Begränsa bredden på meddelanderutan så att ikonerna inte överlappar varandra",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Bakgrundsfärg för feedback-dialog",
     "description": "Feedback dialog background color"

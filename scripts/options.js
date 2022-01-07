@@ -6,6 +6,8 @@ function saveOptions(e) {
     iconPosRight: document.getElementById("iconPosRight").value,
     iconSize: document.getElementById("iconSize").value,
     hideIconTime: document.getElementById("hideIconTime").value,
+    iconPosFix: document.getElementById("iconPosFix").checked,
+    narrowMessagePane: document.getElementById("narrowMessagePane").checked,
     feedbackBgcolor: document.getElementById("feedbackBgcolor").value,
   });
   e.preventDefault();
@@ -52,6 +54,8 @@ function restoreOptions() {
     document.getElementById("iconPosRight").value = data.iconPosRight;// ?? 8;
     document.getElementById("iconSize").value = data.iconSize;// ?? 48;
     document.getElementById("hideIconTime").value = data.hideIconTime;// ?? 0;
+    document.getElementById("iconPosFix").checked = data.iconPosFix;
+    document.getElementById("narrowMessagePane").checked = data.narrowMessagePane;
     document.getElementById("feedbackBgcolor").value = data.feedbackBgcolor;// ?? "#ffe4c4";
     //if (data.overlay.length > 0) document.getElementById("overlayDef").value = data.overlay;
     if (data.overlay) document.getElementById("overlayDef").value = data.overlay;
@@ -73,6 +77,8 @@ function restoreOptions() {
   document.getElementById("hideIconTimeLbl").textContent = browser.i18n.getMessage("options.icon.hideIconTime");
   document.getElementById("hideSecLbl").textContent = browser.i18n.getMessage("options.icon.hideSec");
   document.getElementById("zeroCautionLbl").textContent = browser.i18n.getMessage("options.icon.zeroCaution");
+  document.getElementById("iconPosFix").textContent = browser.i18n.getMessage("options.icon.iconPosFix");
+  document.getElementById("narrowMessagePane").textContent = browser.i18n.getMessage("options.icon.narrowMessagePane");
   document.getElementById("feedbackBgcolorLbl").textContent = browser.i18n.getMessage("options.icon.feedbackBgcolor");
   document.getElementById("overlayLbl").textContent = "User overrides(dispMuaOverlay.csv)"; //browser.i18n.getMessage("options.icon.position");
   document.getElementById("applyBtn").value = browser.i18n.getMessage("options.button.apply");

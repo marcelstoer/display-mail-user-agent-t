@@ -115,6 +115,14 @@
     "message": "*0 sekund, ikona zůstane zobrazena",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Opravte polohu ikony",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Zúžte šířku podokna zpráv tak, aby se ikony nepřekrývaly",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Barva pozadí dialogového okna zpětné vazby",
     "description": "Feedback dialog background color"

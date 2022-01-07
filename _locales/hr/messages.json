@@ -115,6 +115,14 @@
     "message": "*0 sekundi, ikona će ostati prikazana",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "Popravite položaj ikone",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "Suzite širinu okna s porukama tako da se ikone ne preklapaju",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "Boja pozadine dijaloga za povratne informacije",
     "description": "Feedback dialog background color"

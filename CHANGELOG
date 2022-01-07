@@ -5,6 +5,11 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.8 2022-1-8
+- Some more icon(2200 now)
+- Added the ability to fix the icon position.
+- Added a function to narrow the width of the message pane so that the icon is not displayed on the message body. Thanks Antonio.
+
 2.7.2 2021-12-21
 - Added 2 user-agent strings
 - Some more icon(2196 now)

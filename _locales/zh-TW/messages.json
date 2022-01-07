@@ -115,6 +115,14 @@
     "message": "*0 秒，圖標將保持顯示",
     "description": "*0 seconds, the icon will remain displayed"
   },
+  "options.icon.iconPosFix": {
+    "message": "修復圖標位置",
+    "description": "Fix the position of the icon"
+  },
+  "options.icon.narrowMessagePane": {
+    "message": "縮小消息窗格的寬度，使圖標不重疊",
+    "description": "Narrow the width of the message pane so that the icons do not overlap"
+  },
   "options.icon.feedbackBgcolor": {
     "message": "反饋對話框背景色",
     "description": "Feedback dialog background color"
