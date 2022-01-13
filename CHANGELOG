@@ -5,6 +5,9 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.8.1 2022-1-14
+- Added user-agent string
+
 2.8 2022-1-8
 - Some more icon(2200 now)
 - Added the ability to fix the icon position.
