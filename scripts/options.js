@@ -80,7 +80,7 @@ function restoreOptions() {
   document.getElementById("iconPosFixLbl").textContent = browser.i18n.getMessage("options.icon.iconPosFix");
   document.getElementById("narrowMessagePaneLbl").textContent = browser.i18n.getMessage("options.icon.narrowMessagePane");
   document.getElementById("feedbackBgcolorLbl").textContent = browser.i18n.getMessage("options.icon.feedbackBgcolor");
-  document.getElementById("overlayLbl").textContent = "User overrides(dispMuaOverlay.csv)"; //browser.i18n.getMessage("options.icon.position");
+  document.getElementById("overlayLbl").textContent = "User overrides (dispMuaOverlay.csv)"; //browser.i18n.getMessage("options.icon.position");
   document.getElementById("applyBtn").value = browser.i18n.getMessage("options.button.apply");
   document.getElementById("importBtnLbl").textContent = browser.i18n.getMessage("options.button.import");
   document.getElementById("exportBtn").value = browser.i18n.getMessage("options.button.export");

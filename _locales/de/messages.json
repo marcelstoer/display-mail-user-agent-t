@@ -40,7 +40,7 @@
     "description": "feedback mail info 2"
   },
   "feedback.iconinfo": {
-    "message": "Anforderung: PNG, 48x48 Pixel, transparenter Hintergrund, gute Qualität",
+    "message": "Anforderung: PNG, 48 x 48 Pixel, transparenter Hintergrund, gute Qualität",
     "description": "feedback icon info"
   },
   "feedback.subject": {
@@ -64,11 +64,11 @@
     "description": "apply button"
   },
   "options.button.import": {
-    "message": "Importieren",
+    "message": "Importieren...",
     "description": "import label for button"
   },
   "options.button.export": {
-    "message": "Exportieren",
+    "message": "Exportieren...",
     "description": "export button"
   },
   "options.button.applyOl": {
@@ -104,23 +104,23 @@
     "description": "Icon size:"
   },
   "options.icon.hideIconTime": {
-    "message": "Ausblenden des Symbols nach einer bestimmten Zeit. ",
+    "message": "Ausblenden des Symbols nach: ",
     "description": "Hide the icon after a certain period of time"
   },
   "options.icon.hideSec": {
-    "message": " Sek.",
+    "message": " Sekunden",
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "* Bei 0 Sekunden, bleibt das Symbol immer angezeigt",
+    "message": "* Bei 0 Sekunden wird das Symbol immer angezeigt",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.iconPosFix": {
-    "message": "Fixieren Sie die Position des Symbols",
+    "message": "Position des Symbols fixieren",
     "description": "Fix the position of the icon"
   },
   "options.icon.narrowMessagePane": {
-    "message": "Verkleinern Sie die Breite des Nachrichtenbereichs, damit sich die Symbole nicht überlappen",
+    "message": "Breite des Nachrichtenbereichs verkleinern, damit sich die Symbole nicht überlappen",
     "description": "Narrow the width of the message pane so that the icons do not overlap"
   },
   "options.icon.feedbackBgcolor": {
