@@ -60,7 +60,7 @@
     "description": "feedback mail body URL"
   },
   "options.button.apply": {
-    "message": "Подать заявление",
+    "message": "Сохранить",
     "description": "apply button"
   },
   "options.button.import": {
@@ -68,7 +68,7 @@
     "description": "import label for button"
   },
   "options.button.export": {
-    "message": "экспорт",
+    "message": "Экспортировать",
     "description": "export button"
   },
   "options.button.applyOl": {
@@ -76,27 +76,27 @@
     "description": "apply overlay button"
   },
   "options.icon.showToolbarButton": {
-    "message": "Показать значок кнопки на панели инструментов",
+    "message": "Показывать кнопку со значком на инструментальной панели",
     "description": "show Toolbarbutton Icon"
   },
   "options.icon.messagePaneIcon": {
-    "message": "Конфигурация значка панели сообщений",
+    "message": "Настройка значка на панели сообщения",
     "description": "message pane icon config"
   },
   "options.icon.showMessagePaneIcon": {
-    "message": "Отображение значка на панели сообщений",
+    "message": "Показывать значок на панели сообщения",
     "description": "Display the icon in the message pane"
   },
   "options.icon.iconPos": {
-    "message": "Положение значка, отображаемого на панели сообщений",
+    "message": "Положение значка на панели сообщения",
     "description": "The position of the icon display in the message pane"
   },
   "options.icon.iconPosTop": {
-    "message": "Вершина:",
+    "message": "Сверху:",
     "description": "Top:"
   },
   "options.icon.iconPosRight": {
-    "message": "Правильно:",
+    "message": "Справа:",
     "description": "Right:"
   },
   "options.icon.iconSize": {
@@ -112,15 +112,15 @@
     "description": "(sec)"
   },
   "options.icon.zeroCaution": {
-    "message": "*0 секунд, значок останется отображаться",
+    "message": "*0 секунд - значок не будет скрываться",
     "description": "*0 seconds, the icon will remain displayed"
   },
   "options.icon.iconPosFix": {
-    "message": "Исправить положение значка",
+    "message": "Зафиксировать положение значка",
     "description": "Fix the position of the icon"
   },
   "options.icon.narrowMessagePane": {
-    "message": "Уменьшите ширину панели сообщений, чтобы значки не перекрывали друг друга",
+    "message": "Уменьшить ширину панели сообщения, чтобы значок и текст не перекрывали друг друга",
     "description": "Narrow the width of the message pane so that the icons do not overlap"
   },
   "options.icon.feedbackBgcolor": {

@@ -1539,6 +1539,7 @@
 	  "myblog" : ["myblog.png", "http://www.myblog.de/"],
 	  "momail" : ["momail.png", "http://www.momail.de/"],
 	  "modest" : ["modest.png", "http://modest.garage.maemo.org/"],
+	  "mitis/" : ["mitis.png", "https://www.mitis.one/"],
 	  "marlin" : ["marlin.png", "http://www.marlin.de/"],
 	  "mailup" : ["mailup_it.png", "http://www.mailup.it/"],
 	  "macbay" : ["macbay.png", "http://www.macbay.de/"],
