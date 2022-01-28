@@ -2240,6 +2240,7 @@
 	  "userland frontier" : ["userland_frontier.png"],
 	  "usanet web-mailer" : ["usanet.png", "http://www.usa.net/"],
 	  "ultrafunk popcorn" : ["popcorn.png", "http://www.ultrafunk.com/products/popcorn/"],
+	  "ubivox mailengine" : ["ubivox.png", "https://www.ubivox.com/"],
 	  "userecho mailer" : ["userechomailer.png", "https://userecho.com/"],
 	  "usenet explorer" : ["usenet_explorer.png", "http://www.usenetexplorer.com/"],
 	  "umo mail system" : ["mozilla_update.png", "http://update.mozilla.org/"],
