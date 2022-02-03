@@ -7,6 +7,7 @@ Forked by: Toshi_ <dispmua@outlook.com>
 
 2.9 2022-2-3
 - Some more icon(2205 now)
+- Fixed capital letters at the beginning of the registered MUA string.(koha)
 
 2.8.6 2022-2-3
 - Added user-agent string
