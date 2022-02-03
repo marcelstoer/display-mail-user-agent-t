@@ -109,6 +109,11 @@ dispMUA.searchIcon = (strUserAgent) =>
   {
     strExtra = "pardot" ;
   }
+  else if (dispMUA.getHeader("x-info").toLowerCase().startsWith("genese") &&
+           dispMUA.getHeader("x-gateway").toLowerCase().startsWith("genese"))
+  {
+    strExtra = "genese";
+  }
 
   strUserAgent = strUserAgent.replace(/(^\s+)|(\s+$)/g, "");
   dispMUA.Info["STRING"] = "";
@@ -296,6 +301,13 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.Info["ICON"] = "pardot.png";
       dispMUA.Info["STRING"] = "Pardot";
       dispMUA.Info["URL"] = "https://www.pardot.com/";
+      dispMUA.Info["FOUND"] = true;
+    }
+    else if (strExtra == "genese")
+    {
+      dispMUA.Info["ICON"] = "genese.png";
+      dispMUA.Info["STRING"] = "Genese";
+      dispMUA.Info["URL"] = "https://www.genese.de/";
       dispMUA.Info["FOUND"] = true;
     }
   }
