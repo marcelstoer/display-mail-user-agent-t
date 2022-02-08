@@ -5,6 +5,10 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.9.1 2022-2-9
+- Fixed the process of getting Identity ID. Thanks Jörg.
+- Some more icon(2207 now)
+
 2.9 2022-2-4
 - Some more icon(2205 now)
 - Fixed capital letters at the beginning of the registered MUA string.(koha)

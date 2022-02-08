@@ -100,7 +100,8 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
   });
 
   browser.accounts.get(message.folder.accountId).then((MailAccount) => {
-    dispMUA.identityId = MailAccount.identities[0].id;
+    //dispMUA.identityId = MailAccount.identities[0].id;
+    dispMUA.identityId = MailAccount.identities.length > 0 ? MailAccount.identities[0].id : null;
   });
 
   var executing;
