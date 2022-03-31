@@ -165,7 +165,7 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
         : "") +
       ".popup-page {position: absolute; right: 8px; top: 8px; border: 1px; border-color: #0; border-style: soiid; border-radius: 5px; padding: 5px; background-color: " + options.feedbackBgcolor + ";} " +
       "#feedbackdiv {z-index: 2; opacity: 0; transition:opacity 500ms;} " +
-      "input.flat {border: 0; width: 100%; background-color: " + options.feedbackBgcolor + ";} .wrap {display: flex; } .icon {width: 48px; height: 48px;} .throbber {width: 16px; height:16px; margin-left:3px; } .wrapbutton {display: flex; justify-content: space-between;}"}
+      "input.flat {border: 0; width: 100%; background-color: " + options.feedbackBgcolor + ";} .feedbackdiv-wrap {display: flex; } .feedbackdiv-icon {width: 48px; height: 48px;} .feedbackdiv-throbber {width: 16px; height:16px; margin-left:3px; } .feedbackdiv-wrapbutton {display: flex; justify-content: space-between;}"}
     );
 
     browser.storage.local.get().then((s) => {
