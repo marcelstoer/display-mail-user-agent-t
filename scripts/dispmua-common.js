@@ -572,7 +572,7 @@ dispMUA.infopopup = () =>
   if ( dispMUA.Info["STRING"] == "" )
   {
     //alert ( dispMUA.bundle.getString ( "dispMUA.NoUserAgent" ) ) ;
-    alert(dispMUA.bundle.GetStringFromName("dispMUA.NoUserAgent"));
+    //alert(dispMUA.bundle.GetStringFromName("dispMUA.NoUserAgent"));
   }
   else if (dispMUA.Info["ICON"] == "empty.png")
   {

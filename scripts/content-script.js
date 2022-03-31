@@ -38,16 +38,16 @@
       feedback.style.width = "450px";
       feedback.style.visibility = "hidden";
       feedback.id = "feedbackdiv";
-      let content = `<div class="wrap">
+      let content = `<div class="` + feedback.id + `-wrap">
           <div style="flex: 1;">
               <input id="feedback-MUA1" type="text" readonly="readonly" class="flat" style="min-width:280px; width:100%; background:none; font-weight:bold; font-size:large;"></input>
               <input id="feedback-MUA2" type="text" readonly="readonly" class="flat" style="width: 100%;"></input>
               <label id="feedback-supported"/>
           </div>
-          <div class="icon">
+          <div class="` + feedback.id + `-icon">
               <image id="feedback-icon" src="" style="width:48px; height:48px;" />
           </div>
-          <div class="throbber">
+          <div class="` + feedback.id + `-throbber">
               <image id="feedback-throbber" src=""/>
           </div>
       </div>
@@ -56,7 +56,7 @@
           <input id="feedback-mailinfo2" type="text" readonly="readonly" class="flat" />
           <input id="feedback-iconinfo" type="text" readonly="readonly" class="flat" />
       </div>
-      <div class="wrapbutton">
+      <div class="` + feedback.id + `-wrapbutton">
         <div>
           <image id="feedback-openoption" src="chrome://messenger/skin/icons/developer.svg" style="position:relative; top:5px; left:1px"/>
           <input type="button" id="feedback-button-send""/>
