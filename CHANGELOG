@@ -5,6 +5,10 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.9.6 2022-4-6
+- Added user-agent string
+- Removed alert when user agent string does not exist(There was another one)
+
 2.9.5 2022-4-1
 - Some more icon(2222 now)
 - Added 3 user-agent strings

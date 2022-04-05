@@ -105,7 +105,7 @@
           //console.log(s.cmd + ": " + s.str);
           //console.log("setContent from Message");
           if (s.str == "") {
-            alert(browser.i18n.getMessage("dispMUA.NoUserAgent"));
+            //alert(browser.i18n.getMessage("dispMUA.NoUserAgent"));
           } else if (s.icon == "empty.png") {
             //window.close();
             console.log("In content script, enmty.png");
