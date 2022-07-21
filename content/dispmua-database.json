@@ -167,6 +167,7 @@
 	{
 	  "7.0 for windows" : ["aol.png", "http://www.aol.com/"],
 	  "724mailer" : ["724mailer.png", "http://www.seventwentyfour.com/"],
+	  "7.1.2" : ["noicon.png"],
 	  "7.1.1" : ["noicon.png"]
 	} ,
 "8":
