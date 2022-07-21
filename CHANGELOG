@@ -5,6 +5,12 @@ Created by: Christian Weiske <cweiske@cweiske.de>
 Further development by: Juergen Ernst <dispmua@juergen-ernst.de>
 Forked by: Toshi_ <dispmua@outlook.com>
 
+2.9.12 2022-7-22
+- Fixed thunderbird version number check
+- Some more icon(2241 now)
+- Change one MUA for judgment
+- Added 4 user-agent strings
+
 2.9.11 2022-5-18
 - Added user-agent string
 

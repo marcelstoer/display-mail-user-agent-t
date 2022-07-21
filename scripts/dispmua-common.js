@@ -190,7 +190,7 @@ dispMUA.searchIcon = (strUserAgent) =>
 
     if (dispMUA.Info["ICON"] == "thunderbird.png")
     {
-      let re = /rv:(\d{1,2}\.\d)/g;
+      let re = /rv:(\d{1,3}\.\d)/g;
       let arr = re.exec(lower);
       let rv = 2;
       if (arr) rv = Number(arr[1]);
