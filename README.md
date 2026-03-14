@@ -1,5 +1,7 @@
 # Display Mail User Agent T
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
+
 Add-on for Thunderbird that displays information about the mail user agent (i.e. email software) with which the selected mail was composed.
 
 ## History
