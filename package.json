@@ -1,0 +1,16 @@
+{
+  "name": "display-mail-user-agent-t",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "web-ext lint && eslint scripts/",
+    "build": "web-ext build",
+    "validate": "node tools/validate-db.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
+    "web-ext": "^10.0.0"
+  }
+}
