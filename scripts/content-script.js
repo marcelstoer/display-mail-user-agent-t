@@ -27,7 +27,6 @@
       if (hideTime > 0) {
         setTimeout(function(){
           document.getElementById("dispMUAicon").style.opacity = "0";
-          //document.getElementById("dispMUAicon").style.visibility = "hidden";
         }, 1000*hideTime);
       }
     }
@@ -67,7 +66,6 @@
       document.body.appendChild(feedback);
       document.getElementById("feedback-button-send").addEventListener("click", doSend);
       document.getElementById("feedback-button-close").addEventListener("click", doClose);
-      //document.getElementById("feedback-icon").addEventListener("click", doOpenURL(info.url));
       document.getElementById("feedback-icon").addEventListener("click", {handleEvent: doOpenURL, url: info.url, eid: info.eid});
       document.getElementById("feedback-openoption").addEventListener("click", function(){port.postMessage({command: "openURL", url: "/content/options.html"})});
     }
@@ -101,24 +99,16 @@
           break;
         case 'MUA info':
           info = s;
-          //console.log("In content script, received message from background script: ");
-          //console.log(s.cmd + ": " + s.str);
-          //console.log("setContent from Message");
           if (s.str == "") {
-            //alert(browser.i18n.getMessage("dispMUA.NoUserAgent"));
           } else if (s.icon == "empty.png") {
-            //window.close();
             console.log("In content script, enmty.png");
-            //return;
           } else {
             insertFeedback(s);
             setContent(s);
           }
           break;
         case 'show feedback':
-          //insertFeedback(s);
           showFeedback();
-          //document.getElementById("dispMUAicon").click();
           break;
         case 'toggle feedback':
           if (document.getElementById("feedbackdiv").style.visibility == "visible") {
