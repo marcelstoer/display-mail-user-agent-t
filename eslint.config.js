@@ -18,9 +18,7 @@ export default [
     },
     rules: {
       'no-unused-vars': 'warn',
-      // Downgraded to 'warn': one pre-existing undeclared variable ('data') in
-      // dispmua-common.js::getOverlay() is not in scope to fix here.
-      'no-undef':       'warn',
+      'no-undef':       'error',
     },
   },
 ];

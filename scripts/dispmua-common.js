@@ -501,7 +501,7 @@ dispMUA.loadMUAOverlayFile = (data) =>
 dispMUA.getOverlay = () => {
   const skey = "overlay";
   browser.storage.local.get(skey).then( s => {
-    data = s[skey];
+    let data = s[skey];
     //console.log("data:", data);
     data = data.replace(/\r\n/g, "\n").split("\n");
     //dispMUA.arDispMUAOverlay = new Array();
