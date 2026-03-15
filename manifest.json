@@ -25,7 +25,7 @@
   "web_accessible_resources": [
     "images/*.png",
     "images/*.gif",
-    "scripts/content-scripts.js",
+    "scripts/content-script.js",
     "content/dispmua-database.json",
     "content/48x48/*.png"
   ],
