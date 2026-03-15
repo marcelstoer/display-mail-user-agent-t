@@ -11,8 +11,6 @@
  *      — files whose first 8 bytes are not the PNG signature are reported as
  *        wrong-format errors (and their dimensions cannot be checked)
  *
- * Pre-existing issues are tracked in the KNOWN_* sets below so they produce
- * warnings rather than errors.  Fix those issues and remove the entries.
  */
 
 import { readFileSync, readdirSync } from 'node:fs';
@@ -28,46 +26,12 @@ const ICONS_DIR = join(ROOT, 'content', '48x48');
 const PNG_SIG = Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]);
 
 // ---------------------------------------------------------------------------
-// Pre-existing known issues — change to errors once fixed.
-// ---------------------------------------------------------------------------
-
-/** Duplicate keys in the DB (JSON.parse keeps the last value silently). */
-const KNOWN_DUPLICATE_KEYS = new Set([
-  'cisco',
-  'm5mailer.com',
-  'produced by phpbb2',
-]);
-
-/** DB entries that reference an icon file which does not exist. */
-const KNOWN_ORPHANED_ICONS = new Set([
-  'owamail3.png',          // referenced in DB but file is missing
-  'scienceshumaines.png',  // referenced in DB but file is missing
-]);
-
-/** Icon files in content/48x48/ that are not PNG format. */
-const KNOWN_WRONG_FORMAT = new Set([
-  'netcorecloud.png',  // actually a JPEG file (48×48)
-  'vfpwinsock.png',    // actually a JPEG file (48×48)
-]);
-
-/** Icon files in content/48x48/ whose dimensions are not 48×48. */
-const KNOWN_WRONG_DIMENSIONS = new Set([
-  'febooti.png',      // 37×37
-  'gfwl.png',         // 48×49
-  'hclmessenger.png', // 49×48
-]);
-
-// ---------------------------------------------------------------------------
 
 let errorCount = 0;
 
 function error(msg) {
   console.error(`  ERROR: ${msg}`);
   errorCount++;
-}
-
-function warn(msg) {
-  console.warn(`  WARN:  ${msg}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -87,31 +51,62 @@ try {
 
 // ---------------------------------------------------------------------------
 // 2. Duplicate keys
-//    JSON.parse silently keeps the last value for duplicate keys, so we scan
-//    the raw text for patterns of the form  "key": [  which are DB entries.
+//    JSON.parse silently keeps the last value for duplicate keys within the
+//    same object.  We tokenise the raw text tracking brace/bracket depth so
+//    that only keys within the same section object are compared.  Keys that
+//    appear in different sections (e.g. "cisco" in "c" and "organization")
+//    are intentional and are not flagged.
 // ---------------------------------------------------------------------------
 console.log('\n[2] Duplicate key detection');
 {
-  const entryRe = /"([^"\\]+)":\s*\[/g;
-  const keyCounts = new Map();
-  let m;
-  while ((m = entryRe.exec(jsonText)) !== null) {
-    const k = m[1];
-    keyCounts.set(k, (keyCounts.get(k) ?? 0) + 1);
+  // Minimal tokeniser: match JSON strings or single structural characters.
+  const tokenRe = /"(?:[^"\\]|\\.)*"|[{}[\]]/g;
+  let depth = 0;       // object nesting depth
+  let arrayDepth = 0;  // array nesting depth within the current object level
+  let currentSection = null;
+  let prevStr = null;
+  const sectionKeys = new Map(); // section → Map<key, count>
+  let tok;
+  while ((tok = tokenRe.exec(jsonText)) !== null) {
+    const t = tok[0];
+    if (t === '{') {
+      depth++;
+      if (depth === 2 && prevStr !== null) {
+        currentSection = prevStr;
+        sectionKeys.set(currentSection, new Map());
+      }
+      prevStr = null;
+    } else if (t === '}') {
+      depth--;
+      prevStr = null;
+    } else if (t === '[') {
+      arrayDepth++;
+      prevStr = null;
+    } else if (t === ']') {
+      arrayDepth--;
+      prevStr = null;
+    } else {
+      // JSON string token
+      const str = JSON.parse(t);
+      if (depth === 2 && arrayDepth === 0) {
+        // String at the top level of a section object → entry key
+        const counts = sectionKeys.get(currentSection);
+        if (counts) counts.set(str, (counts.get(str) ?? 0) + 1);
+      }
+      prevStr = str;
+    }
   }
   let newDupes = 0;
-  for (const [key, count] of keyCounts) {
-    if (count > 1) {
-      if (KNOWN_DUPLICATE_KEYS.has(key)) {
-        warn(`Known duplicate key: "${key}" (${count} occurrences)`);
-      } else {
-        error(`Duplicate key: "${key}" appears ${count} times`);
+  for (const [section, keys] of sectionKeys) {
+    for (const [key, count] of keys) {
+      if (count > 1) {
+        error(`Duplicate key: "${key}" appears ${count} times in section "${section}"`);
         newDupes++;
       }
     }
   }
   if (newDupes === 0) {
-    console.log('  OK — no new duplicate keys found');
+    console.log('  OK — no duplicate keys found');
   }
 }
 
@@ -139,16 +134,12 @@ console.log('\n[3] Orphaned icon references');
   let newOrphans = 0;
   for (const ref of iconRefs) {
     if (ref && !iconFiles.has(ref)) {
-      if (KNOWN_ORPHANED_ICONS.has(ref)) {
-        warn(`Known orphaned icon reference: "${ref}"`);
-      } else {
-        error(`Orphaned icon reference: "${ref}" not found in content/48x48/`);
-        newOrphans++;
-      }
+      error(`Orphaned icon reference: "${ref}" not found in content/48x48/`);
+      newOrphans++;
     }
   }
   if (newOrphans === 0) {
-    console.log(`  OK — no new orphaned icon references (${iconRefs.length} entries checked)`);
+    console.log(`  OK — no orphaned icon references (${iconRefs.length} entries checked)`);
   }
 }
 
@@ -180,29 +171,21 @@ console.log('\n[4] Icon format and dimensions');
     // Check PNG signature.
     const isPng = PNG_SIG.every((byte, i) => buf[i] === byte);
     if (!isPng) {
-      if (KNOWN_WRONG_FORMAT.has(file)) {
-        warn(`Known wrong format: "${file}" is not a PNG file`);
-      } else {
-        error(`${file}: not a PNG file (wrong file signature)`);
-        newFormatErrors++;
-      }
+      error(`${file}: not a PNG file (wrong file signature)`);
+      newFormatErrors++;
       continue; // can't read PNG dimensions from a non-PNG
     }
 
     const width  = buf.readUInt32BE(16);
     const height = buf.readUInt32BE(20);
     if (width !== 48 || height !== 48) {
-      if (KNOWN_WRONG_DIMENSIONS.has(file)) {
-        warn(`Known wrong dimensions: "${file}" is ${width}×${height}`);
-      } else {
-        error(`${file}: expected 48×48, got ${width}×${height}`);
-        newDimErrors++;
-      }
+      error(`${file}: expected 48×48, got ${width}×${height}`);
+      newDimErrors++;
     }
   }
 
   if (newFormatErrors === 0 && newDimErrors === 0) {
-    console.log(`  OK — no new format or dimension errors (${iconFiles.length} files checked)`);
+    console.log(`  OK — no format or dimension errors (${iconFiles.length} files checked)`);
   }
 }
 
