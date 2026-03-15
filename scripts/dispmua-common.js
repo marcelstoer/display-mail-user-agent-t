@@ -254,7 +254,7 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.Info["STRING"] = "X-PHP-Bug";
       dispMUA.Info["FOUND"] = true;
     }
-    else if (strExtra == "gitlb")
+    else if (strExtra === "gitlab")
     {
       dispMUA.Info["ICON"] = "gitlab.png";
       dispMUA.Info["STRING"] = "x-gitlab-project";
@@ -530,11 +530,11 @@ dispMUA.checktext = () =>
 }
 
 dispMUA.checktextPopup = () =>
-{ 
+{
   var selectedText = dispMUA.checktextGetSelectedText();
   var elem = document.getElementById("dispmua-checktext");
   elem.hidden = true;
-       
+
   if (selectedText != "")
   {
     if (selectedText.length > 18)
@@ -549,7 +549,7 @@ dispMUA.checktextPopup = () =>
 }
 
 dispMUA.checktextGetSelectedText = () =>
-{ 
+{
   var node = document.popupNode;
   var selection = "";
 
