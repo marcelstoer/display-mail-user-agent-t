@@ -16,7 +16,7 @@
     "messagesRead", "messagesModify", "storage", "accountsRead", "downloads"
   ],
   "background": {
-    "scripts": ["scripts/dispmua.js", "scripts/dispmua-common.js"]
+    "page": "background.html"
   },
   "options_ui" : {
     "page": "content/options.html",

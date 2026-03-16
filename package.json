@@ -4,8 +4,9 @@
   "type": "module",
   "scripts": {
     "lint": "web-ext lint && eslint scripts/",
-    "build": "web-ext build",
-    "validate": "node tools/validate-db.js"
+    "validate": "node tools/validate-db.js",
+    "test": "node --test tests/*.test.js",
+    "build": "web-ext build"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -11,6 +11,7 @@ export default {
     'eslint.config.js',
     'node_modules',
     'package.json',
+    'tests',
     'tools',
     'web-ext-artifacts',
     'web-ext-config.mjs',

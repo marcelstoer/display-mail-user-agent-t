@@ -1,4 +1,4 @@
-var dispMUA =
+export const dispMUA =
 {
   loaded: null,
   //olLoaded: null,
@@ -196,11 +196,13 @@ dispMUA.searchIcon = (strUserAgent) =>
       if (arr) rv = Number(arr[1]);
       re = /thunderbird[\/ ]([0-9a-z\.]+)/;
       arr = re.exec(lower);
-      let ver = arr[1];
       let tb = "thunderbird";
-      if (ver.indexOf('a') > 0) tb = "daily";
-      else if (ver.indexOf('b') > 0) tb = "earibird";
-      else if (rv >= 60) tb += "60";
+      if (arr) {
+        let ver = arr[1];
+        if (ver.indexOf('a') > 0) tb = "daily";
+        else if (ver.indexOf('b') > 0) tb = "earlybird";
+        else if (rv >= 60) tb += "60";
+      }
       tb += "-";
       if (lower.indexOf("; linux") > -1)
       {

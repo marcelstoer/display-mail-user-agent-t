@@ -26,6 +26,9 @@ jobs:
       - name: Validate database
         run: yarn validate
 
+      - name: Test
+        run: yarn test
+
       - name: Build XPI
         run: yarn build
 

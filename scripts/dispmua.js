@@ -1,3 +1,6 @@
+import { dispMUA } from './dispmua-common.js';
+import { encodeHeader } from './utils.js';
+
 browser.messageDisplayAction.onClicked.addListener((tabId) => {
   if (dispMUA.Info["ICON"] != "empty.png") {
     port.postMessage({command: "toggle feedback"});
@@ -79,13 +82,12 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     dispMUA.headers = messagePart.headers;
     dispMUA.Info["messageId"] = message.id;
     //Correspondence to the problem that Subject and List-ID in messagePart.headers are decoded and stored
-    const mheader = "=?UTF-8?B?";
     const ascii = /^[ -~]+$/;
     Object.keys(dispMUA.headers).forEach(function (key) {
       for (let i = 0; i < dispMUA.headers[key].length; i++) {
         if (dispMUA.headers[key][i].length > 0 && !ascii.test(dispMUA.headers[key][i])) {
           try {
-            dispMUA.headers[key][i] = mheader + btoa(unescape(encodeURIComponent(dispMUA.headers[key][i]))) + "?=";
+            dispMUA.headers[key][i] = encodeHeader(dispMUA.headers[key][i]);
           }
           catch(e) {
             console.log("header decode error: " + dispMUA.headers[key][i]);
