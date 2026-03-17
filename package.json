@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/thunderbird-webext-browser": "^127.0.0",
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "web-ext": "^10.0.0"

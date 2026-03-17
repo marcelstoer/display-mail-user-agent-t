@@ -244,6 +244,11 @@
   dependencies:
     undici-types "~7.18.0"
 
+"@types/thunderbird-webext-browser@^127.0.0":
+  version "127.0.0"
+  resolved "https://registry.yarnpkg.com/@types/thunderbird-webext-browser/-/thunderbird-webext-browser-127.0.0.tgz#3408cbd8fb2cf4a3e16b187c5f4f69fd5d1fd13e"
+  integrity sha512-ewJdjj6VFueVgPSEUMNKQ/wp+gheXo2oc6xliK5KaYwnt/ynUBRP1VqNXnZLUMO1/AIdrdbo+RrKPCuPmVuiDw==
+
 acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
