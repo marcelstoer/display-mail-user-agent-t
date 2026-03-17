@@ -1,9 +1,11 @@
+export const UNKNOWN_ICON = 'unknown.png';
+
 export const dispMUA =
 {
   loaded: null,
   //olLoaded: null,
   Info: {},
-  arDispMUAOverlay: new Array(),
+  arDispMUAOverlay: [],
   //strOverlayFilename: "dispMuaOverlay.csv",
   arDispMUAAllocation: {},
   identityId: null
@@ -185,7 +187,7 @@ dispMUA.searchIcon = (strUserAgent) =>
 
     if (!dispMUA.Info["FOUND"])
     {
-      dispMUA.Info["ICON"] = "unknown.png";
+      dispMUA.Info["ICON"] = UNKNOWN_ICON;
     }
 
     if (dispMUA.Info["ICON"] == "thunderbird.png")
@@ -418,23 +420,13 @@ dispMUA.showInfo = () =>
   }
 }
 
-// load a data file now based on JSON
-dispMUA.loadJSON = (fname) =>
-{
-  var req = new XMLHttpRequest();
-  //req.open("GET", "chrome://dispmua/content/" + fname , true);
-  req.open("GET", "content/" + fname , true);
-  req.overrideMimeType("application/json; charset=UTF-8");
-
-  req.onreadystatechange = (aEvt) =>
-  {
-    if (req.readyState == 4)
-    {
-      dispMUA.arDispMUAAllocation = JSON.parse(req.responseText);
-    }
-  }
-
-  req.send(null);
+// load a JSON file from the ./content directory
+dispMUA.loadJSON = (filename) => {
+  return fetch("content/" + filename)
+    .then(response => response.json())
+    .then(data => {
+      dispMUA.arDispMUAAllocation = data;
+    });
 }
 
 /*
