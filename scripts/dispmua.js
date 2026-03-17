@@ -3,8 +3,12 @@ import { encodeHeader } from './utils.js';
 
 browser.messageDisplayAction.onClicked.addListener((tabId) => {
   if (dispMUA.Info["ICON"] != "empty.png") {
-    port.postMessage({command: "toggle feedback"});
-  };
+    if (port) {
+      port.postMessage({command: "toggle feedback"});
+    } else {
+      pendingToggle = true;
+    }
+  }
 });
 
 var options = {};
@@ -156,7 +160,8 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     });
 });
 
-var port;
+let port;
+let pendingToggle = false;
 function connected(p) {
   port = p;
   port.onMessage.addListener(function(m) {
@@ -183,6 +188,10 @@ function connected(p) {
         break;
     }
   });
+  if (pendingToggle) {
+    pendingToggle = false;
+    port.postMessage({command: "toggle feedback"});
+  }
 }
 browser.runtime.onConnect.addListener(connected);
 
