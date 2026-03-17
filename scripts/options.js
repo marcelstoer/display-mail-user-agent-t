@@ -60,7 +60,7 @@ function restoreOptions() {
     //if (data.overlay.length > 0) document.getElementById("overlayDef").value = data.overlay;
     if (data.overlay) document.getElementById("overlayDef").value = data.overlay;
   }
-  
+
   function onError(error) {
     console.log(`Error: ${error}`);
   }
@@ -99,8 +99,5 @@ function restoreOptions() {
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
-document.getElementById("applyBtn").addEventListener("click", saveOptions);
 //document.getElementById("showIcon").addEventListener("change", changeOptions);
 document.getElementById("importBtn").addEventListener("change", importOverlay);
-document.getElementById("showToolbarButton").addEventListener("change", saveOptions);
-document.getElementById("messagePaneIcon").addEventListener("change", saveOptions);
