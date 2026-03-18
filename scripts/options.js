@@ -1,4 +1,5 @@
 function saveOptions(e) {
+  if (!document.querySelector("form").reportValidity()) return;
   browser.storage.local.set({
     showToolbarButton: document.getElementById("showToolbarButton").checked,
     showMessagePaneIcon: document.getElementById("showMessagePaneIcon").checked,
@@ -67,24 +68,15 @@ function restoreOptions() {
 
   // localization
   document.title = browser.i18n.getMessage("extensionName") + " " + browser.i18n.getMessage("options.options");
-  document.getElementById("showToolbarButtonLbl").textContent = browser.i18n.getMessage("options.icon.showToolbarButton");
-  document.getElementById("messagePaneIcon").textContent = browser.i18n.getMessage("options.icon.messagePaneIcon");
-  document.getElementById("showMessagePaneIconLbl").textContent = browser.i18n.getMessage("options.icon.showMessagePaneIcon");
-  document.getElementById("iconPosLbl").textContent = browser.i18n.getMessage("options.icon.iconPos");
-  document.getElementById("iconPosTopLbl").textContent = browser.i18n.getMessage("options.icon.iconPosTop");
-  document.getElementById("iconPosRightLbl").textContent = browser.i18n.getMessage("options.icon.iconPosRight");
-  document.getElementById("iconSizeLbl").textContent = browser.i18n.getMessage("options.icon.iconSize");
-  document.getElementById("hideIconTimeLbl").textContent = browser.i18n.getMessage("options.icon.hideIconTime");
-  document.getElementById("hideSecLbl").textContent = browser.i18n.getMessage("options.icon.hideSec");
-  document.getElementById("zeroCautionLbl").textContent = browser.i18n.getMessage("options.icon.zeroCaution");
-  document.getElementById("iconPosFixLbl").textContent = browser.i18n.getMessage("options.icon.iconPosFix");
-  document.getElementById("narrowMessagePaneLbl").textContent = browser.i18n.getMessage("options.icon.narrowMessagePane");
-  document.getElementById("feedbackBgcolorLbl").textContent = browser.i18n.getMessage("options.icon.feedbackBgcolor");
-  document.getElementById("overlayLbl").textContent = "User overrides (dispMuaOverlay.csv)"; //browser.i18n.getMessage("options.icon.position");
-  document.getElementById("applyBtn").value = browser.i18n.getMessage("options.button.apply");
-  document.getElementById("importBtnLbl").textContent = browser.i18n.getMessage("options.button.import");
-  document.getElementById("exportBtn").value = browser.i18n.getMessage("options.button.export");
-  document.getElementById("applyOlBtn").value = browser.i18n.getMessage("options.button.applyOl");
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const msg = browser.i18n.getMessage(el.dataset.i18n);
+    if (el.tagName === "INPUT") {
+      el.value = msg;
+    } else {
+      el.textContent = msg;
+    }
+  });
+  document.getElementById("overlayLbl").textContent = "User overrides (dispMuaOverlay.csv)";
   document.getElementById("overlayExamples").innerHTML = "<b>Example override</b><br />#Lines beginning with # are comment lines<br />#X-Mailer/User-Agent, URI *file:/// support is not good enough<br />thunderbird,file:///data/grafik/mytbicon.png<br />exampleagent,http://example.com/icons/agent.gif<br />\"agent,with,comma\",http://example.com/icons/commaagent.png";
 
   // event registration

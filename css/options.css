@@ -2,6 +2,10 @@ input[type="checkbox"]:disabled + .lbl {
     color: #999;
 }
 
+input[type="number"]:invalid {
+    outline: 2px solid red;
+}
+
 .overlayDef {
     width: 100%;
     font-size: small;

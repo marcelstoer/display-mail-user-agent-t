@@ -3,39 +3,40 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" media="screen" href="/css/options.css" />
+    <link rel="icon" href="/images/logo64.png">
     <title></title>
   </head>
   <body>
     <form>
-      <div><input type="checkbox" id="showToolbarButton"><label id="showToolbarButtonLbl" for="showToolbarButton"/></div>
+      <div><input type="checkbox" id="showToolbarButton"><label id="showToolbarButtonLbl" for="showToolbarButton" data-i18n="options.icon.showToolbarButton"></label></div>
       <fieldset style="width: 600px">
-        <legend id="messagePaneIcon"></legend>
-        <div><input type="checkbox" id="showMessagePaneIcon"><label id="showMessagePaneIconLbl" for="showMessagePaneIcon"/></div>
+        <legend id="messagePaneIcon" data-i18n="options.icon.messagePaneIcon"></legend>
+        <div><input type="checkbox" id="showMessagePaneIcon"><label id="showMessagePaneIconLbl" for="showMessagePaneIcon" data-i18n="options.icon.showMessagePaneIcon"></label></div>
         <fieldset>
-          <legend id="iconPosLbl"></legend>
-          <label id="iconPosTopLbl" for="iconPosTop"></label><input type="number" size="3" id="iconPosTop">
-          <label id="iconPosRightLbl" for="iconPosRight"></label><input type="number" size="3" id="iconPosRight"><label>   default 8 8</label>
+          <legend id="iconPosLbl" data-i18n="options.icon.iconPos"></legend>
+          <label id="iconPosTopLbl" for="iconPosTop" data-i18n="options.icon.iconPosTop"></label><input type="number" size="3" id="iconPosTop" min="0">
+          <label id="iconPosRightLbl" for="iconPosRight" data-i18n="options.icon.iconPosRight"></label><input type="number" size="3" id="iconPosRight" min="0"><span>   default 8 8</span>
         </fieldset>
-        <label id="iconSizeLbl" for="iconSize"></label><input type="number" size="4" id="iconSize"><label>   default 48px</label>
-        <div><label id="hideIconTimeLbl"></label><input type="number" size="1" id="hideIconTime"><label id="hideSecLbl"></label></div>
-        <div><label id="zeroCautionLbl"></label></div>
-        <div><input type="checkbox" id="iconPosFix"><label id="iconPosFixLbl" for="iconPosFix">Fix the position of the icon</label></div>
-        <div><input type="checkbox" id="narrowMessagePane"><label id="narrowMessagePaneLbl" for="narrowMessagePane">Narrowing the width of the message pane for icons</label></div>
+        <label id="iconSizeLbl" for="iconSize" data-i18n="options.icon.iconSize"></label><input type="number" size="4" id="iconSize" min="1"><span>   default 48px</span>
+        <div><label id="hideIconTimeLbl" for="hideIconTime" data-i18n="options.icon.hideIconTime"></label><input type="number" size="1" id="hideIconTime" min="0"><span id="hideSecLbl" data-i18n="options.icon.hideSec"></span></div>
+        <div><span id="zeroCautionLbl" data-i18n="options.icon.zeroCaution"></span></div>
+        <div><input type="checkbox" id="iconPosFix"><label id="iconPosFixLbl" for="iconPosFix" data-i18n="options.icon.iconPosFix"></label></div>
+        <div><input type="checkbox" id="narrowMessagePane"><label id="narrowMessagePaneLbl" for="narrowMessagePane" data-i18n="options.icon.narrowMessagePane"></label></div>
       </fieldset>
-      <div><input type="color" id="feedbackBgcolor">  <label id="feedbackBgcolorLbl" for="feedbackBgcolor"></label></div>
+      <div><input type="color" id="feedbackBgcolor">  <label id="feedbackBgcolorLbl" for="feedbackBgcolor" data-i18n="options.icon.feedbackBgcolor"></label></div>
 
-      <input id="applyBtn" type="button"/>
+      <input id="applyBtn" type="button" data-i18n="options.button.apply"/>
       <hr />
-      <div><label id="overlayLbl"/></div>
+      <div><label id="overlayLbl"></label></div>
       <div>
-        <label for="importBtn" id="importBtnLbl" class="fileLbl"></label><input type="file" id="importBtn" class="fileselect">
-        <input id="exportBtn" type="button"/>
+        <label for="importBtn" id="importBtnLbl" class="fileLbl" data-i18n="options.button.import"></label><input type="file" id="importBtn" class="fileselect">
+        <input id="exportBtn" type="button" data-i18n="options.button.export"/>
       </div>
       <div id="overlayExamples"></div>
       <div>
         <textarea id="overlayDef" class="overlayDef" rows="10"></textarea>
       </div>
-      <input id="applyOlBtn" type="button"/>
+      <input id="applyOlBtn" type="button" data-i18n="options.button.applyOl"/>
     </form>
     <script src="/scripts/options.js"></script>
   </body>
