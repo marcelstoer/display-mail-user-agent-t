@@ -8,7 +8,22 @@ export const dispMUA =
   arDispMUAOverlay: [],
   //strOverlayFilename: "dispMuaOverlay.csv",
   arDispMUAAllocation: {},
-  identityId: null
+  identityId: null,
+
+  getIcon()       { return this.Info["ICON"]; },
+  setIcon(v)      { this.Info["ICON"] = v; },
+  getMuaString()  { return this.Info["STRING"]; },
+  setMuaString(v) { this.Info["STRING"] = v; },
+  getIconPath()   { return this.Info["PATH"]; },
+  setIconPath(v)  { this.Info["PATH"] = v; },
+  isFound()       { return this.Info["FOUND"]; },
+  setFound(v)     { this.Info["FOUND"] = v; },
+  getUrl()        { return this.Info["URL"]; },
+  setUrl(v)       { this.Info["URL"] = v; },
+  getName()       { return this.Info["NAME"]; },
+  setName(v)      { this.Info["NAME"] = v; },
+  getMessageId()  { return this.Info["messageId"]; },
+  setMessageId(v) { this.Info["messageId"] = v; },
 }
 
 dispMUA.getHeader = (key) =>
@@ -118,12 +133,12 @@ dispMUA.searchIcon = (strUserAgent) =>
   }
 
   strUserAgent = strUserAgent.replace(/(^\s+)|(\s+$)/g, "");
-  dispMUA.Info["STRING"] = "";
+  dispMUA.setMuaString("");
   dispMUA.setInfo(false, []);
 
   if (strUserAgent != "")
   {
-    dispMUA.Info["STRING"] = strUserAgent;
+    dispMUA.setMuaString(strUserAgent);
     //var lower = strUserAgent.toLowerCase();
     //MUA string starts with "WebService", Yahoo! Mail, maybe
     var lower = strUserAgent.toLowerCase().replace(/^webservice\/[0-9\. ]+/, "");
@@ -134,19 +149,19 @@ dispMUA.searchIcon = (strUserAgent) =>
       if (lower.indexOf(key) > -1)
       {
         //an overlay icon already has the full path in it, including the protocol
-        dispMUA.Info["PATH"] = "";
-        dispMUA.Info["ICON"] = dispMUA.arDispMUAOverlay[key];
+        dispMUA.setIconPath("");
+        dispMUA.setIcon(dispMUA.arDispMUAOverlay[key]);
         //that the user knows he made the crap
-        dispMUA.Info["STRING"] = strUserAgent + "\n" +
+        dispMUA.setMuaString(strUserAgent + "\n" +
                                  "User override icon" + "\n" +
                                  "Key: " + key + "\n" +
-                                 "Icon: " + dispMUA.Info["ICON"];
-        dispMUA.Info["FOUND"] = true;
+                                 "Icon: " + dispMUA.getIcon());
+        dispMUA.setFound(true);
         break ;
       }
     }
 
-    if (!dispMUA.Info["FOUND"])
+    if (!dispMUA.isFound())
     {
       for (let key in dispMUA.arDispMUAAllocation["fullmatch"])
       {
@@ -158,12 +173,12 @@ dispMUA.searchIcon = (strUserAgent) =>
       }
     }
 
-    if (!dispMUA.Info["FOUND"])
+    if (!dispMUA.isFound())
     {
       dispMUA.scan("presearch", strUserAgent);
     }
 
-    if (!dispMUA.Info["FOUND"])
+    if (!dispMUA.isFound())
     {
       var chLetter = lower.substr(0, 1);
 
@@ -180,17 +195,17 @@ dispMUA.searchIcon = (strUserAgent) =>
       }
     }
 
-    if (!dispMUA.Info["FOUND"])
+    if (!dispMUA.isFound())
     {
       dispMUA.scan("postsearch", strUserAgent);
     }
 
-    if (!dispMUA.Info["FOUND"])
+    if (!dispMUA.isFound())
     {
-      dispMUA.Info["ICON"] = UNKNOWN_ICON;
+      dispMUA.setIcon(UNKNOWN_ICON);
     }
 
-    if (dispMUA.Info["ICON"] == "thunderbird.png")
+    if (dispMUA.getIcon() == "thunderbird.png")
     {
       let re = /rv:(\d{1,3}\.\d)/g;
       let arr = re.exec(lower);
@@ -208,39 +223,39 @@ dispMUA.searchIcon = (strUserAgent) =>
       tb += "-";
       if (lower.indexOf("; linux") > -1)
       {
-        dispMUA.Info["ICON"] = tb + "linux.png";
+        dispMUA.setIcon(tb + "linux.png");
       }
       else if ((lower.indexOf("(windows") > -1) || (lower.indexOf("; windows") > -1))
       {
-        dispMUA.Info["ICON"] = tb + "windows.png";
+        dispMUA.setIcon(tb + "windows.png");
       }
       else if ((lower.indexOf("(macintosh") > -1) || (lower.indexOf("; intel mac") > -1) || (lower.indexOf("; ppc mac") > -1))
       {
-        dispMUA.Info["ICON"] = tb + "mac.png";
+        dispMUA.setIcon(tb + "mac.png");
       }
       else if (lower.indexOf("; sunos") > -1)
       {
-        dispMUA.Info["ICON"] = tb + "sunos.png";
+        dispMUA.setIcon(tb + "sunos.png");
       }
       else if (lower.indexOf("; freebsd") > -1)
       {
-        dispMUA.Info["ICON"] = tb + "freebsd.png";
+        dispMUA.setIcon(tb + "freebsd.png");
       }
       else if (lower.indexOf("(x11") > -1)
       {
-        dispMUA.Info["ICON"] = tb + "x11.png";
+        dispMUA.setIcon(tb + "x11.png");
       }
     }
-    else if (dispMUA.Info["ICON"] == "betterbird.png")
+    else if (dispMUA.getIcon() == "betterbird.png")
     {
       let tb = "betterbird-";
       if (lower.indexOf("; linux") > -1)
       {
-        dispMUA.Info["ICON"] = tb + "linux.png";
+        dispMUA.setIcon(tb + "linux.png");
       }
       else if ((lower.indexOf("(windows") > -1) || (lower.indexOf("; windows") > -1))
       {
-        dispMUA.Info["ICON"] = tb + "windows.png";
+        dispMUA.setIcon(tb + "windows.png");
       }
     }
   }
@@ -248,71 +263,71 @@ dispMUA.searchIcon = (strUserAgent) =>
   {
     if (strExtra == "bugzilla")
     {
-      dispMUA.Info["ICON"] = "bugzilla.png";
-      dispMUA.Info["STRING"] = "X-Bugzilla-Reason";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("bugzilla.png");
+      dispMUA.setMuaString("X-Bugzilla-Reason");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "phpbug")
     {
-      dispMUA.Info["ICON"] = "bug.png";
-      dispMUA.Info["STRING"] = "X-PHP-Bug";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("bug.png");
+      dispMUA.setMuaString("X-PHP-Bug");
+      dispMUA.setFound(true);
     }
     else if (strExtra === "gitlab")
     {
-      dispMUA.Info["ICON"] = "gitlab.png";
-      dispMUA.Info["STRING"] = "x-gitlab-project";
-      dispMUA.Info["URL"] = "https://about.gitlab.com/";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("gitlab.png");
+      dispMUA.setMuaString("x-gitlab-project");
+      dispMUA.setUrl("https://about.gitlab.com/");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "o365")
     {
-      dispMUA.Info["ICON"] = "o365outlook.png";
-      dispMUA.Info["STRING"] = "Office 365 Outlook";
-      dispMUA.Info["URL"] = "https://outlook.com";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("o365outlook.png");
+      dispMUA.setMuaString("Office 365 Outlook");
+      dispMUA.setUrl("https://outlook.com");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "oweb")
     {
-      dispMUA.Info["ICON"] = "o365outlook.png";
-      dispMUA.Info["STRING"] = "Outlook.com";
-      dispMUA.Info["URL"] = "https://outlook.com";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("o365outlook.png");
+      dispMUA.setMuaString("Outlook.com");
+      dispMUA.setUrl("https://outlook.com");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "msteams")
     {
-      dispMUA.Info["ICON"] = "microsoftteams.png";
-      dispMUA.Info["STRING"] = "Microsoft Teams";
-      dispMUA.Info["URL"] = "https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("microsoftteams.png");
+      dispMUA.setMuaString("Microsoft Teams");
+      dispMUA.setUrl("https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "fairemail")
     {
-      dispMUA.Info["ICON"] = "fairemail.png";
-      dispMUA.Info["STRING"] = "FairEmail";
-      dispMUA.Info["URL"] = "https://email.faircode.eu/";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("fairemail.png");
+      dispMUA.setMuaString("FairEmail");
+      dispMUA.setUrl("https://email.faircode.eu/");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "ebay")
     {
-      dispMUA.Info["ICON"] = "ebay2012.png";
-      dispMUA.Info["STRING"] = "eBay";
-      dispMUA.Info["URL"] = "https://www.ebay.com/";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("ebay2012.png");
+      dispMUA.setMuaString("eBay");
+      dispMUA.setUrl("https://www.ebay.com/");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "pardot")
     {
-      dispMUA.Info["ICON"] = "pardot.png";
-      dispMUA.Info["STRING"] = "Pardot";
-      dispMUA.Info["URL"] = "https://www.pardot.com/";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("pardot.png");
+      dispMUA.setMuaString("Pardot");
+      dispMUA.setUrl("https://www.pardot.com/");
+      dispMUA.setFound(true);
     }
     else if (strExtra == "genese")
     {
-      dispMUA.Info["ICON"] = "genese.png";
-      dispMUA.Info["STRING"] = "Genese";
-      dispMUA.Info["URL"] = "https://www.genese.de/";
-      dispMUA.Info["FOUND"] = true;
+      dispMUA.setIcon("genese.png");
+      dispMUA.setMuaString("Genese");
+      dispMUA.setUrl("https://www.genese.de/");
+      dispMUA.setFound(true);
     }
   }
   else if (dispMUA.getHeader("organization") != "")
@@ -327,7 +342,7 @@ dispMUA.searchIcon = (strUserAgent) =>
   {
     dispMUA.getInfo("Message-ID", "message-id");
   }
-  if (dispMUA.Info["ICON"] == "empty.png" && dispMUA.getHeader("dkim-signature") != "")
+  if (dispMUA.getIcon() == "empty.png" && dispMUA.getHeader("dkim-signature") != "")
   {
     dispMUA.getInfo("DKIM-Signature", "dkim-signature");
   }
@@ -353,49 +368,49 @@ dispMUA.getInfo = (header) =>
 {
   var index = header.toLowerCase();
   var value = dispMUA.getHeader(index);
-  dispMUA.Info["STRING"] = header + ": " + value;
+  dispMUA.setMuaString(header + ": " + value);
   dispMUA.scan(index, value);
 
-  if (dispMUA.Info["NAME"])
+  if (dispMUA.getName())
   {
-    dispMUA.Info["STRING"] = dispMUA.Info["NAME"] + "\n" + dispMUA.Info["STRING"];
+    dispMUA.setMuaString(dispMUA.getName() + "\n" + dispMUA.getMuaString());
   }
 }
 
 dispMUA.setInfo = (found, info) =>
 {
-  dispMUA.Info["FOUND"] = found;
-  //dispMUA.Info["PATH"] = "chrome://dispmua/content/48x48/";
+  dispMUA.setFound(found);
+  //dispMUA.setIconPath("chrome://dispmua/content/48x48/");
   //moz-extension://<extension-UUID>/
-  dispMUA.Info["PATH"] = "content/48x48/";
-  dispMUA.Info["ICON"] = "empty.png";
-  dispMUA.Info["URL"] = "";
-  dispMUA.Info["NAME"] = "";
+  dispMUA.setIconPath("content/48x48/");
+  dispMUA.setIcon("empty.png");
+  dispMUA.setUrl("");
+  dispMUA.setName("");
 
   if (info[0])
   {
-    dispMUA.Info["ICON"] = info[0];
+    dispMUA.setIcon(info[0]);
   }
 
   if (info[1])
   {
-    dispMUA.Info["URL"] = info[1];
+    dispMUA.setUrl(info[1]);
   }
 
   if (info[2])
   {
-    dispMUA.Info["NAME"] = info[2];
+    dispMUA.setName(info[2]);
   }
 }
 
 dispMUA.showInfo = () =>
 {
-  var strTooltip = dispMUA.Info["STRING"];
+  var strTooltip = dispMUA.getMuaString();
   var pos = strTooltip.indexOf("\n");
 
   if (pos != -1)
   {
-    strTooltip = dispMUA.Info["STRING"].substr(0, pos);
+    strTooltip = dispMUA.getMuaString().substr(0, pos);
   }
 
   var elem = document.getElementById("dispMUAbroadcast");
@@ -405,9 +420,9 @@ dispMUA.showInfo = () =>
     elem = document.getElementById("dispMUAicon");
   }
 
-  elem.setAttribute("src", dispMUA.Info["PATH"] + dispMUA.Info["ICON"]);
+  elem.setAttribute("src", dispMUA.getIconPath() + dispMUA.getIcon());
   elem.setAttribute("tooltiptext", strTooltip);
-  elem.setAttribute("image", dispMUA.Info["PATH"] + dispMUA.Info["ICON"]); //feat of strength
+  elem.setAttribute("image", dispMUA.getIconPath() + dispMUA.getIcon()); //feat of strength
   elem.setAttribute("title", strTooltip); //feat of strength
   var mini = document.getElementById("dispMUAicon-mini");
 
@@ -563,27 +578,27 @@ dispMUA.checktextGetSelectedText = () =>
 
 dispMUA.infopopup = () =>
 {
-  if ( dispMUA.Info["STRING"] == "" )
+  if ( dispMUA.getMuaString() == "" )
   {
     //alert ( dispMUA.bundle.getString ( "dispMUA.NoUserAgent" ) ) ;
     //alert(dispMUA.bundle.GetStringFromName("dispMUA.NoUserAgent"));
   }
-  else if (dispMUA.Info["ICON"] == "empty.png")
+  else if (dispMUA.getIcon() == "empty.png")
   {
   }
   else
   {
     var param = new Array(
-      dispMUA.Info["PATH"] + dispMUA.Info["ICON"],
-      dispMUA.Info["STRING"],
+      dispMUA.getIconPath() + dispMUA.getIcon(),
+      dispMUA.getMuaString(),
       "#990000",
       //dispMUA.bundle.getString ( "dispMUA.NOTsupported" ) ,
       dispMUA.bundle.GetStringFromName("dispMUA.NOTsupported"),
-      dispMUA.Info["URL"],
+      dispMUA.getUrl(),
       dispMUA.headerdata
     ) ;
 
-    if (dispMUA.Info["FOUND"])
+    if (dispMUA.isFound())
     {
       param[2] = "#008800";
       //param[3] = dispMUA.bundle.getString ( "dispMUA.supported" ) ;

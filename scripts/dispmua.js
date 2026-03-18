@@ -2,7 +2,7 @@ import { dispMUA } from './dispmua-common.js';
 import { encodeHeader } from './utils.js';
 
 browser.messageDisplayAction.onClicked.addListener((tabId) => {
-  if (dispMUA.Info["ICON"] != "empty.png") {
+  if (dispMUA.getIcon() != "empty.png") {
     if (port) {
       port.postMessage({command: "toggle feedback"});
     } else {
@@ -85,7 +85,7 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
       browser.messageDisplayAction.setPopup({popup: ''});
       browser.messageDisplayAction.setLabel({label: ''});
       dispMUA.headers = messagePart.headers;
-      dispMUA.Info["messageId"] = message.id;
+      dispMUA.setMessageId(message.id);
       //Correspondence to the problem that Subject and List-ID in messagePart.headers are decoded and stored
       const ascii = /^[ -~]+$/;
       Object.keys(dispMUA.headers).forEach(function (key) {
@@ -108,19 +108,19 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     })
     .then(() => {
       dispMUA.searchIcon("");
-      let pos = dispMUA.Info["STRING"].indexOf("\n");
-      let str = dispMUA.Info["STRING"];
+      let pos = dispMUA.getMuaString().indexOf("\n");
+      let str = dispMUA.getMuaString();
       if (pos != -1) { str = str.substr(0, pos); }
-      if (dispMUA.Info["PATH"] == "") { // overlay
-        if (dispMUA.Info["ICON"].startsWith("file:///")) {
+      if (dispMUA.getIconPath() == "") { // overlay
+        if (dispMUA.getIcon().startsWith("file:///")) {
           //There is no way to read local file icons here
           browser.messageDisplayAction.setIcon({path: "empty.png"});
           browser.messageDisplayAction.setTitle({title: "!?"});
         } else {
-          browser.messageDisplayAction.setIcon({path: dispMUA.Info["ICON"]});
+          browser.messageDisplayAction.setIcon({path: dispMUA.getIcon()});
         }
       } else {
-        browser.messageDisplayAction.setIcon({path: dispMUA.Info["PATH"]+dispMUA.Info["ICON"]});
+        browser.messageDisplayAction.setIcon({path: dispMUA.getIconPath()+dispMUA.getIcon()});
       }
       browser.messageDisplayAction.setTitle({title: str});  //API is now available(Added in TB 84.0b3, backported to TB 78.6.1) so I don't have to truncate strings.
 
@@ -140,18 +140,18 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
         if (s.showToolbarButton) browser.messageDisplayAction.enable(tabId.id);
         executing.then(() => {
           let url = "";
-          if (dispMUA.Info["PATH"] == "") { // overlay
-            if (dispMUA.Info["ICON"].startsWith("file:///")) {
+          if (dispMUA.getIconPath() == "") { // overlay
+            if (dispMUA.getIcon().startsWith("file:///")) {
               //There is no way to read local file icons here
               url = "content/48x48/empty.png";
             } else {
-              url = dispMUA.Info["ICON"];
+              url = dispMUA.getIcon();
             }
           } else {
-            url = browser.runtime.getURL("") + dispMUA.Info["PATH"] + dispMUA.Info["ICON"];
+            url = browser.runtime.getURL("") + dispMUA.getIconPath() + dispMUA.getIcon();
           }
           if (s.showMessagePaneIcon) {
-            port.postMessage({command: "set", iconURL: url, MUA: dispMUA.Info["STRING"], iconSize: s.iconSize, hideTime: s.hideIconTime});
+            port.postMessage({command: "set", iconURL: url, MUA: dispMUA.getMuaString(), iconSize: s.iconSize, hideTime: s.hideIconTime});
           }
         }).catch((e) => {
           console.log("executeScript error: " + e.message);
@@ -169,15 +169,15 @@ function connected(p) {
       case 'request MUA info':
         port.postMessage({
           "command": "MUA info",
-          "mid": dispMUA.Info["messageId"],
+          "mid": dispMUA.getMessageId(),
           "eid": browser.runtime.getURL(""),
           "iid": dispMUA.identityId,
-          "path": dispMUA.Info["PATH"],
-          "icon": dispMUA.Info["ICON"],
-          "url": dispMUA.Info["URL"],
-          "str": dispMUA.Info["STRING"],
+          "path": dispMUA.getIconPath(),
+          "icon": dispMUA.getIcon(),
+          "url": dispMUA.getUrl(),
+          "str": dispMUA.getMuaString(),
           "headers" : joinObj(dispMUA.headers, ": ", "\r\n"),
-          "found" : dispMUA.Info["FOUND"]
+          "found" : dispMUA.isFound()
         });
         break;
       case 'beginNew':

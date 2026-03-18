@@ -31,12 +31,12 @@ describe('loadJSON', () => {
     const loadPromise = dispMUA.loadJSON(DB_FILE);
 
     dispMUA.searchIcon('');
-    assert.equal(dispMUA.Info['ICON'], UNKNOWN_ICON, `race: ${UNKNOWN_ICON} before DB loads`);
+    assert.equal(dispMUA.getIcon(), UNKNOWN_ICON, `race: ${UNKNOWN_ICON} before DB loads`);
 
     resolveFetch();
     await loadPromise;
 
     dispMUA.searchIcon('');
-    assert.equal(dispMUA.Info['ICON'], MUA_ICON, 'correct icon after DB loaded');
+    assert.equal(dispMUA.getIcon(), MUA_ICON, 'correct icon after DB loaded');
   });
 });
