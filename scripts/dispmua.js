@@ -1,8 +1,8 @@
 import { dispMUA } from './dispmua-common.js';
 import { encodeHeader } from './utils.js';
 
-browser.messageDisplayAction.onClicked.addListener((tabId) => {
-  if (dispMUA.getIcon() != "empty.png") {
+browser.messageDisplayAction.onClicked.addListener(() => {
+  if (dispMUA.getIcon() !== "empty.png") {
     if (port) {
       port.postMessage({command: "toggle feedback"});
     } else {
@@ -11,7 +11,7 @@ browser.messageDisplayAction.onClicked.addListener((tabId) => {
   }
 });
 
-var options = {};
+let options = {};
 function setDefault(opt) {
   if (!opt.iconSize) {
     browser.storage.local.set({
@@ -53,13 +53,12 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     dispMUA.dbReady = dispMUA.loadJSON("dispmua-database.json");
     dispMUA.loaded = true;
   }
-  if (Object.keys(dispMUA.arDispMUAOverlay).length == 0) {
+  if (Object.keys(dispMUA.arDispMUAOverlay).length === 0) {
     const skey = "overlay";
     browser.storage.local.get(skey).then( s => {
       if (s[skey]) {
         if (s[skey].length > 0) {
           dispMUA.getOverlay();
-          dispMUA.olLoaded = true;
         }
       }
     });
@@ -75,7 +74,7 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
     dispMUA.identityId = MailAccount.identities.length > 0 ? MailAccount.identities[0].id : null;
   });
 
-  var executing;
+  let executing;
   executing = browser.tabs.executeScript(tabId.id, {
     file: "scripts/content-script.js"
   });
@@ -93,8 +92,7 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
           if (dispMUA.headers[key][i].length > 0 && !ascii.test(dispMUA.headers[key][i])) {
             try {
               dispMUA.headers[key][i] = encodeHeader(dispMUA.headers[key][i]);
-            }
-            catch(e) {
+            } catch {
               console.log("header decode error: " + dispMUA.headers[key][i]);
             }
           }
@@ -102,7 +100,7 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
       });
       if (dispMUA.headers["x-mozilla-keys"] !== undefined) {
         //No meaning. Whitespace characters seem to be deleted, and line breaks are not made if only the header is used. Is it a bug on the compose side?
-        if (dispMUA.headers["x-mozilla-keys"][0].length == 0) dispMUA.headers["x-mozilla-keys"][0] = '\r\n';
+        if (dispMUA.headers["x-mozilla-keys"][0].length === 0) dispMUA.headers["x-mozilla-keys"][0] = '\r\n';
       }
       return dispMUA.dbReady;          // wait for DB before detection
     })
@@ -110,8 +108,8 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
       dispMUA.searchIcon("");
       let pos = dispMUA.getMuaString().indexOf("\n");
       let str = dispMUA.getMuaString();
-      if (pos != -1) { str = str.substr(0, pos); }
-      if (dispMUA.getIconPath() == "") { // overlay
+      if (pos !== -1) { str = str.substr(0, pos); }
+      if (dispMUA.getIconPath() === "") { // overlay
         if (dispMUA.getIcon().startsWith("file:///")) {
           //There is no way to read local file icons here
           browser.messageDisplayAction.setIcon({path: "empty.png"});
@@ -139,8 +137,8 @@ browser.messageDisplay.onMessageDisplayed.addListener((tabId, message) => {
       browser.storage.local.get().then((s) => {
         if (s.showToolbarButton) browser.messageDisplayAction.enable(tabId.id);
         executing.then(() => {
-          let url = "";
-          if (dispMUA.getIconPath() == "") { // overlay
+          let url;
+          if (dispMUA.getIconPath() === "") { // overlay
             if (dispMUA.getIcon().startsWith("file:///")) {
               //There is no way to read local file icons here
               url = "content/48x48/empty.png";
@@ -195,7 +193,7 @@ function connected(p) {
 }
 browser.runtime.onConnect.addListener(connected);
 
-var joinObj = function(obj, fDelimiter, sDelimiter) {
+const joinObj = function(obj, fDelimiter, sDelimiter) {
   let tmpArr = [];
   if (typeof obj === 'undefined') return '';
   if (typeof fDelimiter === 'undefined') fDelimiter = '';

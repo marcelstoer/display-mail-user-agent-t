@@ -14,8 +14,11 @@ export default [
       },
     },
     rules: {
-      'no-unused-vars': 'warn',
-      'no-undef':       'error',
+      'no-unused-vars':    'error',
+      'no-undef':          'error',
+      'no-var':            'error',
+      'eqeqeq':            'error',
+      'no-useless-escape': 'error',
     },
   },
 ];

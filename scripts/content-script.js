@@ -8,7 +8,7 @@
       return;
     }
     window.hasRun = true;
-  
+
     function insertIcon(iconURL, MUA, iconSize, hideTime) {
       removeExistingIcons();
       let dispMUAImage = document.createElement("img");
@@ -37,7 +37,7 @@
       feedback.style.width = "450px";
       feedback.style.visibility = "hidden";
       feedback.id = "feedbackdiv";
-      let content = `<div class="` + feedback.id + `-wrap">
+      feedback.innerHTML = `<div class="` + feedback.id + `-wrap">
           <div style="flex: 1;">
               <input id="feedback-MUA1" type="text" readonly="readonly" class="flat" style="min-width:280px; width:100%; background:none; font-weight:bold; font-size:large;"></input>
               <input id="feedback-MUA2" type="text" readonly="readonly" class="flat" style="width: 100%;"></input>
@@ -62,7 +62,6 @@
         </div>
         <input type="button" id="feedback-button-close"/>
       </div>`;
-      feedback.innerHTML = content;
       document.body.appendChild(feedback);
       document.getElementById("feedback-button-send").addEventListener("click", doSend);
       document.getElementById("feedback-button-close").addEventListener("click", doClose);
@@ -82,11 +81,11 @@
         icon.remove();
       }
     }
-  
-    var port = browser.runtime.connect({name:"dispMUA-T"});
+
+    let port = browser.runtime.connect({name:"dispMUA-T"});
     port.postMessage({command: "request MUA info"});
 
-    var info;
+    let info;
     port.onMessage.addListener(function(s) {
 
       console.log("contentscript: " + s.command);
@@ -99,8 +98,8 @@
           break;
         case 'MUA info':
           info = s;
-          if (s.str == "") {
-          } else if (s.icon == "empty.png") {
+          if (s.str === "") {
+          } else if (s.icon === "empty.png") {
             console.log("In content script, enmty.png");
           } else {
             insertFeedback(s);
@@ -111,7 +110,7 @@
           showFeedback();
           break;
         case 'toggle feedback':
-          if (document.getElementById("feedbackdiv").style.visibility == "visible") {
+          if (document.getElementById("feedbackdiv").style.visibility === "visible") {
             doClose();
           } else {
             showFeedback();
@@ -124,7 +123,7 @@
       let MUAstring1 = s.str;
       let MUAstring2 = "";
       let pos = MUAstring1.indexOf("\n");
-      if (pos != -1)
+      if (pos !== -1)
       {
         MUAstring2 = MUAstring1.substr(pos + 1).replace(/\n/g, " ");
         MUAstring1 = MUAstring1.substr(0, pos);
@@ -133,10 +132,9 @@
       document.getElementById("feedback-MUA2").value = MUAstring2;
       let color = s.found ? "#008800" : "#990000";
       document.getElementById("feedback-supported").setAttribute("style", "color:" + color);
-      let supported = s.found ? browser.i18n.getMessage("dispMUA.supported") : browser.i18n.getMessage("dispMUA.NOTsupported");
-      document.getElementById("feedback-supported").textContent = supported;
+      document.getElementById("feedback-supported").textContent = s.found ? browser.i18n.getMessage("dispMUA.supported") : browser.i18n.getMessage("dispMUA.NOTsupported");
       let icon = document.getElementById("feedback-icon");
-      if (s.path == "") {
+      if (s.path === "") {
         icon.setAttribute("src", s.icon);
       } else {
         icon.setAttribute("src", s.eid + s.path + s.icon);
@@ -144,7 +142,7 @@
       icon.setAttribute("title", s.url);
       icon.setAttribute("width", 48);
       icon.setAttribute("height", 48);
-      icon.addEventListener("click", () => { doOpenURL(info.url); }, false);
+      icon.addEventListener("click", () => { doOpenURL(); }, false);
       let throbber = document.getElementById("feedback-throbber");
       throbber.setAttribute("src", s.eid + "images/throbber.png");
       document.getElementById("feedback-mailinfo1").value = browser.i18n.getMessage("feedback.mailinfo1");
@@ -152,7 +150,7 @@
       document.getElementById("feedback-iconinfo").value = browser.i18n.getMessage("feedback.iconinfo");
       document.getElementById("feedback-openoption").setAttribute("title", browser.i18n.getMessage("Options.options"));
       document.getElementById("feedback-button-send").value = browser.i18n.getMessage("feedback.button.send");
-      document.getElementById("feedback-button-close").value = browser.i18n.getMessage("feedback.button.close");;
+      document.getElementById("feedback-button-close").value = browser.i18n.getMessage("feedback.button.close");
     }
 
     function doSend() {
@@ -172,7 +170,7 @@
       setTimeout(function(){document.getElementById("feedbackdiv").style.visibility = "hidden";}, 500);
     }
 
-    function doOpenURL(e) {
+    function doOpenURL() {
       let path = this.eid;
       if (this.url) {
         document.getElementById("feedback-throbber").src = path + "images/throbber.gif";

@@ -14,7 +14,7 @@ function saveOptions(e) {
   e.preventDefault();
 }
 
-function saveOverlay(e) {
+function saveOverlay() {
   browser.storage.local.set({
     overlay: document.getElementById("overlayDef").value,
     overlayChanged: true
@@ -32,7 +32,7 @@ function importOverlay(e) {
   }
 }
 
-function exportOverlay(e) {
+function exportOverlay() {
   let data = document.getElementById("overlayDef").value;
   console.log("data: ", data);
   let blob = new Blob([data], {type: "text/plain"});
@@ -86,10 +86,9 @@ function restoreOptions() {
   document.getElementById("exportBtn").addEventListener("click", exportOverlay);
   document.getElementById("applyOlBtn").addEventListener("click", saveOverlay);
 
-  var getting = browser.storage.local.get();
+  let getting = browser.storage.local.get();
   getting.then(setCurrentChoice, onError);
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
-//document.getElementById("showIcon").addEventListener("change", changeOptions);
 document.getElementById("importBtn").addEventListener("change", importOverlay);

@@ -3,7 +3,6 @@ export const UNKNOWN_ICON = 'unknown.png';
 export const dispMUA =
 {
   loaded: null,
-  //olLoaded: null,
   Info: {},
   arDispMUAOverlay: [],
   //strOverlayFilename: "dispMuaOverlay.csv",
@@ -28,10 +27,9 @@ export const dispMUA =
 
 dispMUA.getHeader = (key) =>
 {
-  //var value = dispMUA.headers.extractHeader(key, false);
-  var value = dispMUA.headers[key];
+  let value = dispMUA.headers[key];
 
-  if (value == null) value = "";
+  if (value === null || value === undefined) value = "";
   else value = value.toString();
 
   value = value.replace(/\s+/g, " ");
@@ -68,7 +66,7 @@ dispMUA.searchIcon = (strUserAgent) =>
     strUserAgent = decodeURIComponent(escape(atob(strUserAgent)));
   }
 
-  var strExtra = "";
+  let strExtra = "";
 
   if (dispMUA.getHeader("x-bugzilla-reason"))
   {
@@ -86,39 +84,38 @@ dispMUA.searchIcon = (strUserAgent) =>
   else if (/*dispMUA.getHeader("x-ms-office365-filtering-correlation-id") &&
            dispMUA.getHeader("x-ms-publictraffictype"))*/
            // thanks silversonic https://twitter.com/silversonicboom
-           (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() == "hosted" &&
-            dispMUA.getHeader("x-ms-exchange-crosstenant-mailboxtype").toLowerCase() == "hosted") ||
-           (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() == "hosted" &&
-            dispMUA.getHeader("x-ms-exchange-transport-crosstenantheadersstamped") != "")
+           (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() === "hosted" &&
+            dispMUA.getHeader("x-ms-exchange-crosstenant-mailboxtype").toLowerCase() === "hosted") ||
+           (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() === "hosted" &&
+            dispMUA.getHeader("x-ms-exchange-transport-crosstenantheadersstamped") !== "")
           )
   {
     strExtra = "o365";
   }
-  else if (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() == "internet" &&
-           dispMUA.getHeader("x-originatororg").toLowerCase() == "outlook.com")
+  else if (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() === "internet" &&
+           dispMUA.getHeader("x-originatororg").toLowerCase() === "outlook.com")
   {
     strExtra = "oweb";
   }
-  else if (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() == "internet" &&
-           dispMUA.getHeader("x-originatororg").toLowerCase() == "email.teams.microsoft.com")
+  else if (dispMUA.getHeader("x-ms-exchange-crosstenant-fromentityheader").toLowerCase() === "internet" &&
+           dispMUA.getHeader("x-originatororg").toLowerCase() === "email.teams.microsoft.com")
   {
     strExtra = "msteams";
   }
   else if (dispMUA.getHeader("x-correlation-id"))
   {
-    if (dispMUA.getHeader("x-correlation-id") == dispMUA.getHeader("message-id"))
+    if (dispMUA.getHeader("x-correlation-id") === dispMUA.getHeader("message-id"))
       strExtra = "fairemail" ;
   }
   else if (dispMUA.getHeader("x-ebay-mailtracker"))
   {
-    let re = /d=(export\.)?ebay\.[\.a-z]{2,6};/m
-    //if (re.test(dispMUA.headers.extractHeader("dkim-signature", true))) strExtra = "ebay" ;
+    let re = /d=(export\.)?ebay\.[.a-z]{2,6};/m
     if (dispMUA.headers["dkim-signature"]) {
       if (re.test(dispMUA.headers["dkim-signature"].join("\n"))) strExtra = "ebay" ;
       else if (dispMUA.getHeader("message-id").endsWith("@starship>")) strExtra = "ebay" ;
     }
   }
-  else if (dispMUA.getHeader("sender") == dispMUA.getHeader("from"))
+  else if (dispMUA.getHeader("sender") === dispMUA.getHeader("from"))
   {
     if (dispMUA.getHeader("sender").endsWith("ebay.com>")) strExtra = "ebay" ;
   }
@@ -136,12 +133,12 @@ dispMUA.searchIcon = (strUserAgent) =>
   dispMUA.setMuaString("");
   dispMUA.setInfo(false, []);
 
-  if (strUserAgent != "")
+  if (strUserAgent !== "")
   {
     dispMUA.setMuaString(strUserAgent);
     //var lower = strUserAgent.toLowerCase();
     //MUA string starts with "WebService", Yahoo! Mail, maybe
-    var lower = strUserAgent.toLowerCase().replace(/^webservice\/[0-9\. ]+/, "");
+    let lower = strUserAgent.toLowerCase().replace(/^webservice\/[0-9. ]+/, "");
 
     //user overlay array
     for (let key in dispMUA.arDispMUAOverlay)
@@ -165,7 +162,7 @@ dispMUA.searchIcon = (strUserAgent) =>
     {
       for (let key in dispMUA.arDispMUAAllocation["fullmatch"])
       {
-        if (lower == key)
+        if (lower === key)
         {
           dispMUA.setInfo(true, dispMUA.arDispMUAAllocation["fullmatch"][key]);
           break;
@@ -180,13 +177,13 @@ dispMUA.searchIcon = (strUserAgent) =>
 
     if (!dispMUA.isFound())
     {
-      var chLetter = lower.substr(0, 1);
+      let chLetter = lower.substr(0, 1);
 
       if (dispMUA.arDispMUAAllocation[chLetter])
       {
         for (let key in dispMUA.arDispMUAAllocation[chLetter])
         {
-          if (lower.substr(0, key.length) == key)
+          if (lower.substr(0, key.length) === key)
           {
             dispMUA.setInfo(true, dispMUA.arDispMUAAllocation[chLetter][key]);
             break;
@@ -205,13 +202,13 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.setIcon(UNKNOWN_ICON);
     }
 
-    if (dispMUA.getIcon() == "thunderbird.png")
+    if (dispMUA.getIcon() === "thunderbird.png")
     {
       let re = /rv:(\d{1,3}\.\d)/g;
       let arr = re.exec(lower);
       let rv = 2;
       if (arr) rv = Number(arr[1]);
-      re = /thunderbird[\/ ]([0-9a-z\.]+)/;
+      re = /thunderbird[/ ]([0-9a-z.]+)/;
       arr = re.exec(lower);
       let tb = "thunderbird";
       if (arr) {
@@ -246,7 +243,7 @@ dispMUA.searchIcon = (strUserAgent) =>
         dispMUA.setIcon(tb + "x11.png");
       }
     }
-    else if (dispMUA.getIcon() == "betterbird.png")
+    else if (dispMUA.getIcon() === "betterbird.png")
     {
       let tb = "betterbird-";
       if (lower.indexOf("; linux") > -1)
@@ -259,15 +256,15 @@ dispMUA.searchIcon = (strUserAgent) =>
       }
     }
   }
-  else if (strExtra != "")
+  else if (strExtra !== "")
   {
-    if (strExtra == "bugzilla")
+    if (strExtra === "bugzilla")
     {
       dispMUA.setIcon("bugzilla.png");
       dispMUA.setMuaString("X-Bugzilla-Reason");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "phpbug")
+    else if (strExtra === "phpbug")
     {
       dispMUA.setIcon("bug.png");
       dispMUA.setMuaString("X-PHP-Bug");
@@ -280,49 +277,49 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.setUrl("https://about.gitlab.com/");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "o365")
+    else if (strExtra === "o365")
     {
       dispMUA.setIcon("o365outlook.png");
       dispMUA.setMuaString("Office 365 Outlook");
       dispMUA.setUrl("https://outlook.com");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "oweb")
+    else if (strExtra === "oweb")
     {
       dispMUA.setIcon("o365outlook.png");
       dispMUA.setMuaString("Outlook.com");
       dispMUA.setUrl("https://outlook.com");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "msteams")
+    else if (strExtra === "msteams")
     {
       dispMUA.setIcon("microsoftteams.png");
       dispMUA.setMuaString("Microsoft Teams");
       dispMUA.setUrl("https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "fairemail")
+    else if (strExtra === "fairemail")
     {
       dispMUA.setIcon("fairemail.png");
       dispMUA.setMuaString("FairEmail");
       dispMUA.setUrl("https://email.faircode.eu/");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "ebay")
+    else if (strExtra === "ebay")
     {
       dispMUA.setIcon("ebay2012.png");
       dispMUA.setMuaString("eBay");
       dispMUA.setUrl("https://www.ebay.com/");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "pardot")
+    else if (strExtra === "pardot")
     {
       dispMUA.setIcon("pardot.png");
       dispMUA.setMuaString("Pardot");
       dispMUA.setUrl("https://www.pardot.com/");
       dispMUA.setFound(true);
     }
-    else if (strExtra == "genese")
+    else if (strExtra === "genese")
     {
       dispMUA.setIcon("genese.png");
       dispMUA.setMuaString("Genese");
@@ -330,29 +327,28 @@ dispMUA.searchIcon = (strUserAgent) =>
       dispMUA.setFound(true);
     }
   }
-  else if (dispMUA.getHeader("organization") != "")
+  else if (dispMUA.getHeader("organization") !== "")
   {
     dispMUA.getInfo("Organization", "organization");
   }
-  else if (dispMUA.getHeader("x-mimeole") != "")
+  else if (dispMUA.getHeader("x-mimeole") !== "")
   {
     dispMUA.getInfo("X-MimeOLE", "x-mimeole");
   }
-  else if (dispMUA.getHeader("message-id") != "")
+  else if (dispMUA.getHeader("message-id") !== "")
   {
     dispMUA.getInfo("Message-ID", "message-id");
   }
-  if (dispMUA.getIcon() == "empty.png" && dispMUA.getHeader("dkim-signature") != "")
+  if (dispMUA.getIcon() === "empty.png" && dispMUA.getHeader("dkim-signature") !== "")
   {
     dispMUA.getInfo("DKIM-Signature", "dkim-signature");
   }
 
-  //dispMUA.showInfo();
 }
 
 dispMUA.scan = (index, value) =>
 {
-  var lower = value.toLowerCase();
+  let lower = value.toLowerCase();
 
   for (let key in dispMUA.arDispMUAAllocation[index])
   {
@@ -366,8 +362,8 @@ dispMUA.scan = (index, value) =>
 
 dispMUA.getInfo = (header) =>
 {
-  var index = header.toLowerCase();
-  var value = dispMUA.getHeader(index);
+  let index = header.toLowerCase();
+  let value = dispMUA.getHeader(index);
   dispMUA.setMuaString(header + ": " + value);
   dispMUA.scan(index, value);
 
@@ -403,38 +399,6 @@ dispMUA.setInfo = (found, info) =>
   }
 }
 
-dispMUA.showInfo = () =>
-{
-  var strTooltip = dispMUA.getMuaString();
-  var pos = strTooltip.indexOf("\n");
-
-  if (pos != -1)
-  {
-    strTooltip = dispMUA.getMuaString().substr(0, pos);
-  }
-
-  var elem = document.getElementById("dispMUAbroadcast");
-
-  if (elem == null)
-  {
-    elem = document.getElementById("dispMUAicon");
-  }
-
-  elem.setAttribute("src", dispMUA.getIconPath() + dispMUA.getIcon());
-  elem.setAttribute("tooltiptext", strTooltip);
-  elem.setAttribute("image", dispMUA.getIconPath() + dispMUA.getIcon()); //feat of strength
-  elem.setAttribute("title", strTooltip); //feat of strength
-  var mini = document.getElementById("dispMUAicon-mini");
-
-  if (mini)
-  {
-    mini.src = elem.src;
-    mini.setAttribute("tooltiptext", strTooltip);
-    mini.image = elem.image; //feat of strength
-    mini.setAttribute("title", strTooltip); //feat of strength
-  }
-}
-
 // load a JSON file from the ./content directory
 dispMUA.loadJSON = (filename) => {
   return fetch("content/" + filename)
@@ -460,27 +424,27 @@ dispMUA.loadJSON = (filename) => {
 */
 dispMUA.loadMUAOverlayFile = (data) =>
 {
-  var strLine, nEndQuote, nCommaPos;
-  var strKey, strValue;
+  let strLine, nEndQuote, nCommaPos;
+  let strKey, strValue;
   let i = 0;
 
   do
   {
     strLine = data[i++];
 
-    if (strLine.substr(0, 1) == "#")
+    if (strLine.substr(0, 1) === "#")
     {
       //comment
       continue;
     }
 
-    if (strLine.substr(0, 1) == "\"")
+    if (strLine.substr(0, 1) === "\"")
     {
       //with quotes
       //find end quote
       nEndQuote = strLine.indexOf("\"", 2);
 
-      if (nEndQuote == -1)
+      if (nEndQuote === -1)
       {
         //no endquote? Bad line!
         continue;
@@ -494,7 +458,7 @@ dispMUA.loadMUAOverlayFile = (data) =>
       nCommaPos = strLine.indexOf(",");
     }
 
-    if (nCommaPos == -1)
+    if (nCommaPos === -1)
     {
       //no comma? Bad line!
       continue;
@@ -511,9 +475,7 @@ dispMUA.getOverlay = () => {
   const skey = "overlay";
   browser.storage.local.get(skey).then( s => {
     let data = s[skey];
-    //console.log("data:", data);
     data = data.replace(/\r\n/g, "\n").split("\n");
-    //dispMUA.arDispMUAOverlay = new Array();
     dispMUA.arDispMUAOverlay.length = 0;
     dispMUA.loadMUAOverlayFile(data);
   }, e => {
@@ -523,90 +485,11 @@ dispMUA.getOverlay = () => {
 
 dispMUA.stripSurroundingQuotes = (string) =>
 {
-  if (string.substr(0, 1) == "\"" && string.substr(string.length - 1) == "\"")
+  if (string.substr(0, 1) === "\"" && string.substr(string.length - 1) === "\"")
   {
     string = string.substr(1);
     string = string.substr(0, string.length - 1);
   }
 
   return(string.trim());
-}
-
-dispMUA.checktext = () =>
-{
-  var selectedText = dispMUA.checktextGetSelectedText();
-  dispMUA.searchIcon(selectedText);
-}
-
-dispMUA.checktextPopup = () =>
-{
-  var selectedText = dispMUA.checktextGetSelectedText();
-  var elem = document.getElementById("dispmua-checktext");
-  elem.hidden = true;
-
-  if (selectedText != "")
-  {
-    if (selectedText.length > 18)
-    {
-      selectedText = selectedText.substr(0, 14) + "...";
-    }
-
-    var menuText = "dispMUA: \"" + selectedText + "\"";
-    elem.setAttribute ("label", menuText);
-    elem.hidden = false;
-  }
-}
-
-dispMUA.checktextGetSelectedText = () =>
-{
-  var node = document.popupNode;
-  var selection = "";
-
-  if ((node instanceof HTMLTextAreaElement) || (node instanceof HTMLInputElement && node.type == "text"))
-  {
-    selection = node.value.substring(node.selectionStart, node.selectionEnd);
-  }
-  else
-  {
-    var focusedWindow = new XPCNativeWrapper(document.commandDispatcher.focusedWindow, "document", "getSelection()");
-    selection = focusedWindow.getSelection().toString();
-  }
-
-  selection = selection.replace(/(^\s+)|(\s+$)/g, "");
-  return(selection);
-}
-
-dispMUA.infopopup = () =>
-{
-  if ( dispMUA.getMuaString() == "" )
-  {
-    //alert ( dispMUA.bundle.getString ( "dispMUA.NoUserAgent" ) ) ;
-    //alert(dispMUA.bundle.GetStringFromName("dispMUA.NoUserAgent"));
-  }
-  else if (dispMUA.getIcon() == "empty.png")
-  {
-  }
-  else
-  {
-    var param = new Array(
-      dispMUA.getIconPath() + dispMUA.getIcon(),
-      dispMUA.getMuaString(),
-      "#990000",
-      //dispMUA.bundle.getString ( "dispMUA.NOTsupported" ) ,
-      dispMUA.bundle.GetStringFromName("dispMUA.NOTsupported"),
-      dispMUA.getUrl(),
-      dispMUA.headerdata
-    ) ;
-
-    if (dispMUA.isFound())
-    {
-      param[2] = "#008800";
-      //param[3] = dispMUA.bundle.getString ( "dispMUA.supported" ) ;
-      param[3] = dispMUA.bundle.GetStringFromName("dispMUA.supported");
-    }
-
-    window.openDialog("content/feedback.xhtml",
-      "feedback", "chrome=yes,centerscreen",
-      param[0], param[1], param[2], param[3], param[4], param[5]);
-  }
 }
