@@ -2,9 +2,9 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "2.9.13",
+  "version": "2.9.14",
   "default_locale": "en_US",
-  "author": "Jürgen Ernst, Dipl.-Ing.(FH)/Toshi_",
+  "author": "Jürgen Ernst, Dipl.-Ing.(FH)/Toshi_/frightanic",
   "homepage_url": "https://addons.thunderbird.net/thunderbird/addon/display-mail-user-agent-t/",
   "applications": {
     "gecko": {
