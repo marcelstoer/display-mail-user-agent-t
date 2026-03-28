@@ -39,8 +39,8 @@
       feedback.id = "feedbackdiv";
       feedback.innerHTML = `<div class="` + feedback.id + `-wrap">
           <div style="flex: 1;">
-              <input id="feedback-MUA1" type="text" readonly="readonly" class="flat" style="min-width:280px; width:100%; background:none; font-weight:bold; font-size:large;"></input>
-              <input id="feedback-MUA2" type="text" readonly="readonly" class="flat" style="width: 100%;"></input>
+              <input id="feedback-MUA1" type="text" readonly="readonly" class="flat" style="min-width:280px; width:100%; background:none; font-weight:bold; font-size:large;">
+              <input id="feedback-MUA2" type="text" readonly="readonly" class="flat" style="width: 100%;">
               <label id="feedback-supported"/>
           </div>
           <div class="` + feedback.id + `-icon">
@@ -98,10 +98,7 @@
           break;
         case 'MUA info':
           info = s;
-          if (s.str === "") {
-          } else if (s.icon === "empty.png") {
-            console.log("In content script, enmty.png");
-          } else {
+          if (s.str !== "" && s.icon !== "empty.png") {
             insertFeedback(s);
             setContent(s);
           }
@@ -154,7 +151,8 @@
     }
 
     function doSend() {
-      let email = "dispmua@outlook.com";
+      let to = [100,105,115,112,109,117,97,64,102,114,105,103,104,116,97,110,105,99,46,99,111,109]
+          .map(c => String.fromCodePoint(c)).join("");
       let subject = browser.i18n.getMessage("feedback.subject") + " " + browser.runtime.getManifest().version;
       let body = browser.i18n.getMessage("feedback.body.MUA") + "\n" +
         info.str + "\n\n" +
@@ -162,7 +160,7 @@
         browser.i18n.getMessage("feedback.body.icon") + "\n" +
         browser.i18n.getMessage("feedback.iconinfo") + "\n\n\n\n\n" +
         "------------------------------\n" + info.headers;
-      port.postMessage({command: "beginNew", to: email, subject: subject, body: body, identityId: info.iid});
+      port.postMessage({command: "beginNew", to: to, subject: subject, body: body, identityId: info.iid});
     }
 
     function doClose() {
