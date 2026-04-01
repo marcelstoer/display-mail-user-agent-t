@@ -305,6 +305,7 @@
 	  "aspqmail" : ["serverobjects.png", "http://www.serverobjects.com/products.htm"],
 	  "aquamail" : ["aquamail.png", "https://www.aqua-mail.com/"],
 	  "altobase" : ["altobase.png", "http://altobase.jp/asp/"],
+	  "aerc " : ["aerc.png", "https://sr.ht/~rjarry/aerc/", "aerc"],
 	  "aeromail" : ["aeromail.png", "http://the.cushman.net/reverb/aeromail/"],
 	  "acmemail" : ["acmemail.png", "http://www.astray.com/acmemail/"],
 	  "accucast" : ["accucast.png", "http://www.accucast.com/"],
