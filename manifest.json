@@ -32,7 +32,7 @@
   "message_display_action": {
   },
   "icons": {
-    "32": "images/logo.png",
+    "32": "images/logo32.png",
     "64": "images/logo64.png"
   }
 }
